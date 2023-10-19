@@ -18,7 +18,7 @@ int main()
         sf::Color backgroundColor(29, 34, 56);
         sf::Color menuColor(38, 45, 71);
 
-        sf::RectangleShape rectangle(sf::Vector2f(308.f, 1080.f));
+        //sf::RectangleShape rectangle(sf::Vector2f(308.f, 1080.f));
         rectangle.setFillColor(menuColor);
         window.clear(backgroundColor);
 
