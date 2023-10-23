@@ -29,6 +29,9 @@ int main()
         // Convert the hex color to RGB
         sf::Color menuColor(38, 45, 71);
 
+        // Set the opacity (alpha) to a value between 0 (completely transparent) and 255 (completely opaque)
+        menuColor.a = 128; // Set alpha to 128 for semi-transparency
+
         sf::RectangleShape rectangle(sf::Vector2f(308.f, 1080.f));
         rectangle.setFillColor(menuColor);
 
