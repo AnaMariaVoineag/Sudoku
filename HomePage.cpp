@@ -46,11 +46,11 @@ int main() {
     // Calculate the center of the menu space line
     float centerXSpaceLine = menuSpaceLine.left + menuSpaceLine.width / 2;
 
-    sf::Text textNG = createText("New Game", font, 24, centerXSpaceLine - textHTPBoundsCentered.width / 2, textHTP.getPosition().y + textHTPBounds.height + 20);
-    sf::Text textLG = createText("Load Game", font, 24, centerXSpaceLine - textHTPBoundsCentered.width / 2, textNG.getPosition().y + textNG.getLocalBounds().height + 20);
-    sf::Text textMG = createText("Music Genre", font, 24, centerXSpaceLine - textHTPBoundsCentered.width / 2, textLG.getPosition().y + textLG.getLocalBounds().height + 20);
-    sf::Text textYC = createText("Your Content", font, 24, centerXSpaceLine - textHTPBoundsCentered.width / 2, textMG.getPosition().y + textMG.getLocalBounds().height + 20);
-    sf::Text textSettings = createText("Your Settings", font, 24, centerXSpaceLine - textHTPBoundsCentered.width / 2, textYC.getPosition().y + textYC.getLocalBounds().height + 20);
+    sf::Text textNG = createText("New Game", font, 24, centerXSpaceLine - textHTPBoundsCentered.width / 2, textHTP.getPosition().y + textHTPBounds.height + 30);
+    sf::Text textLG = createText("Load Game", font, 24, centerXSpaceLine - textHTPBoundsCentered.width / 2, textNG.getPosition().y + textNG.getLocalBounds().height + 30);
+    sf::Text textMG = createText("Music Genre", font, 24, centerXSpaceLine - textHTPBoundsCentered.width / 2, textLG.getPosition().y + textLG.getLocalBounds().height + 30);
+    sf::Text textYC = createText("Your Content", font, 24, centerXSpaceLine - textHTPBoundsCentered.width / 2, textMG.getPosition().y + textMG.getLocalBounds().height + 30);
+    sf::Text textSettings = createText("Your Settings", font, 24, centerXSpaceLine - textHTPBoundsCentered.width / 2, textYC.getPosition().y + textYC.getLocalBounds().height + 30);
 
     // Load the background image
     sf::Texture backgroundTexture;
