@@ -10,7 +10,7 @@ public:
         text.setFillColor(textColor);
         text.setFont(font);
         text.setCharacterSize(charSize);
-        //--------------------------------
+        //******************************//
         button.setSize(size);
         button.setFillColor(fillColor);
     }
@@ -23,6 +23,11 @@ public:
     void setFillColor(sf::Color color)
     {
         button.setFillColor(color);
+    }
+
+    void setSize(sf::Vector2f size)
+    {
+        button.setSize(size);
     }
 
     void setPosition(sf::Vector2f pos)

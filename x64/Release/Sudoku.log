@@ -1,10 +1,10 @@
 ﻿  HomePage.cpp
-D:\faculta\Sudoku\Button.h(45,22): warning C4244: 'initializing': conversion from 'T' to 'float', possible loss of data
+D:\faculta\Sudoku\Button.h(50,22): warning C4244: 'initializing': conversion from 'T' to 'float', possible loss of data
           with
           [
               T=int
           ]
-D:\faculta\Sudoku\Button.h(46,22): warning C4244: 'initializing': conversion from 'T' to 'float', possible loss of data
+D:\faculta\Sudoku\Button.h(51,22): warning C4244: 'initializing': conversion from 'T' to 'float', possible loss of data
           with
           [
               T=int

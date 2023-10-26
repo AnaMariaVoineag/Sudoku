@@ -45,8 +45,6 @@ int main() {
             }
         }
 
-        
-
         sf::RectangleShape rectangle(sf::Vector2f(308.f, 1080.f));
         rectangle.setFillColor(menuColor);
 
