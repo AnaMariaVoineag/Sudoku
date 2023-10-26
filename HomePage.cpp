@@ -26,6 +26,17 @@ int main() {
     sf::Color menuColor(38, 45, 71);
     menuColor.a = 128;
 
+    // Load the "rules.png" image
+    sf::Texture rulesTexture;
+    if (!rulesTexture.loadFromFile("images/rules.png")) {
+        std::cout << "Could not find the background image" << std::endl;
+        return 1;
+    }
+
+    sf::Sprite rulesSprite(rulesTexture);
+
+    bool showRules = false;
+
     while (window.isOpen()) {
         sf::Event Event;
 
@@ -42,6 +53,30 @@ int main() {
                     btn1.setFillColor(menuColor);
                 }
                 break;
+            case sf::Event::MouseButtonPressed:
+                if (btn1.isMouseOver(window)) {
+                    showRules = true;
+                }
+                break;
+            }
+
+            if (showRules) {
+                sf::RenderWindow rulesWindow(sf::VideoMode(1332, 653), "How to Play");
+
+                while (rulesWindow.isOpen()) {
+                    sf::Event rulesEvent;
+
+                    while (rulesWindow.pollEvent(rulesEvent)) {
+                        if (rulesEvent.type == sf::Event::Closed) {
+                            showRules = false;
+                            rulesWindow.close();
+                        }
+                    }
+
+                    rulesWindow.clear();
+                    rulesWindow.draw(rulesSprite);
+                    rulesWindow.display();
+                }
             }
         }
 
