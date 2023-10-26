@@ -29,37 +29,30 @@ int main() {
         return 1;
     }
 
-    // Use the createText function to create text items
     sf::Text textHTP = createText("How to play", font, 40, 40.f, 180.f);
     sf::FloatRect textHTPBounds = textHTP.getGlobalBounds();
     centerText(textHTP, textHTPBounds);
 
-    // Calculate the bounding rectangle for the menu space line
     sf::FloatRect menuSpaceLine = textHTP.getGlobalBounds();
     menuSpaceLine.left = 40.f;
     menuSpaceLine.width = 308.f;
 
-    // Calculate new bounds for textHTP after centering
     sf::FloatRect textHTPBoundsCentered = textHTP.getGlobalBounds();
     centerText(textHTP, textHTPBoundsCentered);
 
-    // Calculate the center of the menu space line
     float centerXSpaceLine = menuSpaceLine.left + menuSpaceLine.width / 2;
 
-    sf::Text textNG = createText("New Game", font, 24, centerXSpaceLine - textHTPBoundsCentered.width / 2, textHTP.getPosition().y + textHTPBounds.height + 30);
-    sf::Text textLG = createText("Load Game", font, 24, centerXSpaceLine - textHTPBoundsCentered.width / 2, textNG.getPosition().y + textNG.getLocalBounds().height + 30);
-    sf::Text textMG = createText("Music Genre", font, 24, centerXSpaceLine - textHTPBoundsCentered.width / 2, textLG.getPosition().y + textLG.getLocalBounds().height + 30);
-    sf::Text textYC = createText("Your Content", font, 24, centerXSpaceLine - textHTPBoundsCentered.width / 2, textMG.getPosition().y + textMG.getLocalBounds().height + 30);
-    sf::Text textSettings = createText("Your Settings", font, 24, centerXSpaceLine - textHTPBoundsCentered.width / 2, textYC.getPosition().y + textYC.getLocalBounds().height + 30);
+    sf::Text textText1 = createText("Text1", font, 32, centerXSpaceLine - textHTPBoundsCentered.width / 2, textHTP.getPosition().y + textHTPBounds.height + 20);
+
+    sf::Text textText2 = createText("Text2", font, 32, centerXSpaceLine - textHTPBoundsCentered.width / 2, textText1.getPosition().y + textText1.getLocalBounds().height + 20);
 
     // Load the background image
     sf::Texture backgroundTexture;
     if (!backgroundTexture.loadFromFile("images/grid.jpg")) {
         std::cout << "Could not find the background image" << std::endl;
-        return 1; 
+        return 1;
     }
 
-    // Create a sprite for the background
     sf::Sprite backgroundSprite(backgroundTexture);
 
     while (window.isOpen()) {
@@ -68,33 +61,38 @@ int main() {
         while (window.pollEvent(event)) {
             if (event.type == sf::Event::Closed)
                 window.close();
+
+            if (event.type == sf::Event::MouseMoved) {
+                if (textHTP.getGlobalBounds().contains(sf::Vector2f(event.mouseMove.x, event.mouseMove.y)) ||
+                    textText1.getGlobalBounds().contains(sf::Vector2f(event.mouseMove.x, event.mouseMove.y)) ||
+                    textText2.getGlobalBounds().contains(sf::Vector2f(event.mouseMove.x, event.mouseMove.y))) {
+                    // Change the text color or other properties to indicate the mouse is over them
+                    textHTP.setFillColor(sf::Color::White);
+                    textText1.setFillColor(sf::Color::White);
+                    textText2.setFillColor(sf::Color::White);
+                }
+                else {
+                    // Restore the original text color or properties
+                    textHTP.setFillColor(sf::Color::Black);
+                    textText1.setFillColor(sf::Color::Black);
+                    textText2.setFillColor(sf::Color::Black);
+                }
+            }
         }
 
-        // Convert the hex color to RGB
         sf::Color menuColor(38, 45, 71);
-
-        menuColor.a = 128; // Set alpha to 128 for semi-transparency
+        menuColor.a = 128;
 
         sf::RectangleShape rectangle(sf::Vector2f(308.f, 1080.f));
         rectangle.setFillColor(menuColor);
 
         window.clear();
-
-        // Draw the background image first
         window.draw(backgroundSprite);
-
-        // Draw the menu rectangle
         window.draw(rectangle);
-
-        // Display the text
         window.draw(textHTP);
-        window.draw(textNG);
-        window.draw(textLG);
-        window.draw(textMG);
-        window.draw(textYC);
-        window.draw(textSettings);
+        window.draw(textText1);
+        window.draw(textText2);
         window.display();
-
     }
 
     return 0;
