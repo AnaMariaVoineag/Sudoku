@@ -1,12 +1,17 @@
+#include <iostream>
+#include <SFML/Graphics.hpp>
+
 class Button {
 public:
     Button() {}
-    Button(std::string t, sf::Font& font, int charSize, sf::Color textColor, sf::Color fillColor)
+    Button(std::string t, sf::Font& font, sf::Vector2f size, int charSize, sf::Color textColor, sf::Color fillColor)
     {
         text.setString(t);
         text.setFillColor(textColor);
         text.setFont(font);
         text.setCharacterSize(charSize);
+        //--------------------------------
+        button.setSize(size);
         button.setFillColor(fillColor);
     }
 
@@ -20,10 +25,13 @@ public:
         button.setFillColor(color);
     }
 
-    void setPosition(sf::Vector2f position)
+    void setPosition(sf::Vector2f pos)
     {
-        button.setPosition(position);
-        text.setPosition(position.x + (button.getGlobalBounds().width - text.getGlobalBounds().width) / 2, position.y + (button.getGlobalBounds().height - text.getGlobalBounds().height) / 2);
+        button.setPosition(pos);
+
+        float xPos = (pos.x + button.getLocalBounds().width / 2) - (text.getLocalBounds().width / 2);
+        float yPos = (pos.y + button.getLocalBounds().height / 2) - (text.getLocalBounds().height / 2);
+        text.setPosition({ xPos, yPos });
     }
 
     void drawTo(sf::RenderWindow& window)
@@ -34,9 +42,20 @@ public:
 
     bool isMouseOver(sf::RenderWindow& window)
     {
-        sf::FloatRect buttonBounds = button.getGlobalBounds();
-        sf::Vector2i mousePosition = sf::Mouse::getPosition(window);
-        return buttonBounds.contains(static_cast<sf::Vector2f>(mousePosition));
+        float mouseX = sf::Mouse::getPosition(window).x;
+        float mouseY = sf::Mouse::getPosition(window).y;
+
+        float btnPosX = button.getPosition().x;
+        float btnPosY = button.getPosition().y;
+
+        float btnxPosWidth = button.getPosition().x + button.getLocalBounds().width;
+        float btnxPosheight = button.getPosition().y + button.getLocalBounds().height;
+
+        if (mouseX < btnxPosWidth && mouseX > btnPosX && mouseY < btnxPosheight && mouseY > btnPosY)
+        {
+            return true;
+        }
+        return false;
     }
 
 private:
