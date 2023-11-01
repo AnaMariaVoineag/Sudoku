@@ -1,1 +1,5 @@
-D:\faculta\Sudoku\HomePage.cpp;D:\faculta\Sudoku\x64\Release\HomePage.obj
+D:\faculta\Sudoku\Button.cpp;D:\faculta\Sudoku\x64\Release\Button.obj
+D:\faculta\Sudoku\GameState.cpp;D:\faculta\Sudoku\x64\Release\GameState.obj
+D:\faculta\Sudoku\State.cpp;D:\faculta\Sudoku\x64\Release\State.obj
+D:\faculta\Sudoku\Sudoku.cpp;D:\faculta\Sudoku\x64\Release\Sudoku.obj
+D:\faculta\Sudoku\main.cpp;D:\faculta\Sudoku\x64\Release\main.obj

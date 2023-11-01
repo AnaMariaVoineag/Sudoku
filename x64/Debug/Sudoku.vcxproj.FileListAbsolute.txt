@@ -1,1 +1,2 @@
 D:\faculta\Sudoku\x64\Debug\Sudoku.exe
+D:\faculta\Doodle\x64\Debug\Doodle.exe

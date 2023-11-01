@@ -1,69 +1,40 @@
-#include <iostream>
-#include <SFML/Graphics.hpp>
-
-class Button {
-public:
-    Button() {}
-    Button(std::string t, sf::Font& font, sf::Vector2f size, int charSize, sf::Color textColor, sf::Color fillColor)
-    {
-        text.setString(t);
-        text.setFillColor(textColor);
-        text.setFont(font);
-        text.setCharacterSize(charSize);
-        //******************************//
-        button.setSize(size);
-        button.setFillColor(fillColor);
-    }
-
-    void setTextColor(sf::Color color)
-    {
-        text.setFillColor(color);
-    }
-
-    void setFillColor(sf::Color color)
-    {
-        button.setFillColor(color);
-    }
-
-    void setSize(sf::Vector2f size)
-    {
-        button.setSize(size);
-    }
-
-    void setPosition(sf::Vector2f pos)
-    {
-        button.setPosition(pos);
-
-        float xPos = (pos.x + button.getLocalBounds().width / 2) - (text.getLocalBounds().width / 2);
-        float yPos = (pos.y + button.getLocalBounds().height / 2) - (text.getLocalBounds().height / 2);
-        text.setPosition({ xPos, yPos });
-    }
-
-    void drawTo(sf::RenderWindow& window)
-    {
-        window.draw(button);
-        window.draw(text);
-    }
-
-    bool isMouseOver(sf::RenderWindow& window)
-    {
-        float mouseX = sf::Mouse::getPosition(window).x;
-        float mouseY = sf::Mouse::getPosition(window).y;
-
-        float btnPosX = button.getPosition().x;
-        float btnPosY = button.getPosition().y;
-
-        float btnxPosWidth = button.getPosition().x + button.getLocalBounds().width;
-        float btnxPosheight = button.getPosition().y + button.getLocalBounds().height;
-
-        if (mouseX < btnxPosWidth && mouseX > btnPosX && mouseY < btnxPosheight && mouseY > btnPosY)
-        {
-            return true;
-        }
-        return false;
-    }
-
-private:
-    sf::RectangleShape button;
-    sf::Text text;
-};
+//#include <iostream>
+//#include <ctime>
+//#include <cstdlib>
+//#include <sstream>
+//
+//#include <SFML/System.hpp>
+//#include <SFML/Window.hpp>
+//#include <SFML/Graphics.hpp>
+//#include <SFML/Audio.hpp>
+//
+//#ifndef BUTTON_H
+//#define BUTTON_H
+//
+//enum button_states{BTN_IDLE = 0, BTN_HOVER, BTN_PRESSED};
+//
+//class Button {
+//public:
+//    Button(float x, float y, float width, float height, sf::Font* font, 
+//    std::string text, sf::Color idleColor, sf::Color hoverColor, sf::Color pressedColor);
+//    ~Button();
+//
+//    //Accessor
+//    const bool isPressed() const;
+//
+//    //Functions
+//    void update(const sf::Vector2f mousePos);
+//    void render(sf::RenderTarget* target);
+//
+//private:
+//    short unsigned buttonState;
+//
+//    sf::RectangleShape shape;
+//    sf::Font* font;
+//    sf::Text text;
+//
+//    sf::Color idleColor;
+//    sf::Color hoverColor;
+//    sf::Color pressedColor;
+//};
+//#endif
