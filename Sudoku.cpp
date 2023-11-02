@@ -1,5 +1,6 @@
 #include "Sudoku.h"
 
+
 //Static functions
 
 //Initializer functions
@@ -36,6 +37,7 @@ void Sudoku::initMenuColor()
 void Sudoku::initStates()
 {
 	this->states.push(new GameState(this->window));
+	this->states.push(new MainMenuState(this->window));
 }
 
 //Load the background 

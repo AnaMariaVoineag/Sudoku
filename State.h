@@ -30,10 +30,16 @@ public:
 	virtual void update(const float& dt) = 0;
 	virtual void render(sf::RenderTarget* target = nullptr) = 0;
 
-private:
+protected:
 	sf::RenderWindow* window;
 	std::vector<sf::Texture> textures;
 	bool quit;
+
+	sf::Vector2u mousePosScreen;
+	sf::Vector2i mousePosWindow;
+	sf::Vector2i mousePosView;
+
+private:
 
 };
 #endif

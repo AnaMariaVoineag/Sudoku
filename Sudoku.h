@@ -1,7 +1,7 @@
 #ifndef SUDOKU_H
 #define SUDOKU_H
 
-#include "GameState.h"
+#include "MainMenuState.h"
 
 class Sudoku
 {

@@ -135,6 +135,7 @@
   <ItemGroup>
     <ClCompile Include="Button.cpp" />
     <ClCompile Include="GameState.cpp" />
+    <ClCompile Include="MainMenuState.cpp" />
     <ClCompile Include="State.cpp" />
     <ClCompile Include="Sudoku.cpp" />
     <ClCompile Include="main.cpp" />
@@ -142,6 +143,7 @@
   <ItemGroup>
     <ClInclude Include="Button.h" />
     <ClInclude Include="GameState.h" />
+    <ClInclude Include="MainMenuState.h" />
     <ClInclude Include="State.h" />
     <ClInclude Include="Sudoku.h" />
   </ItemGroup>
