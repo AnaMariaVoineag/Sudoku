@@ -1,5 +1,4 @@
-#ifndef SUDOKU_H
-#define SUDOKU_H
+#pragma once
 
 #include "MainMenuState.h"
 
@@ -7,7 +6,7 @@ class Sudoku
 {
 public:
 	Sudoku();
-	virtual ~Sudoku();
+	~Sudoku();
 
 	//Functions
 	void updateDt();
@@ -36,5 +35,3 @@ private:
 	void initStates();
 
 };
-
-#endif

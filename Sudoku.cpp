@@ -1,6 +1,5 @@
 #include "Sudoku.h"
 
-
 //Static functions
 
 //Initializer functions

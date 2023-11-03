@@ -1,5 +1,4 @@
-#ifndef STATE_H
-#define STATE_H
+#pragma once
 
 #include <iostream>
 #include <ctime>
@@ -20,26 +19,25 @@ class State
 {
 public:
 	State(sf::RenderWindow* window);
-	virtual ~State();
+	~State();
 
 	const bool& getQuit() const;
 
 	virtual void checkForQuit();
 	virtual void endState() = 0;
-
+	virtual void updateMousePos();
 	virtual void update(const float& dt) = 0;
-	virtual void render(sf::RenderTarget* target = nullptr) = 0;
+	virtual void render(sf::RenderTarget* target = NULL) = 0;
 
 protected:
 	sf::RenderWindow* window;
 	std::vector<sf::Texture> textures;
 	bool quit;
 
-	sf::Vector2u mousePosScreen;
+	sf::Vector2i mousePosScreen;
 	sf::Vector2i mousePosWindow;
-	sf::Vector2i mousePosView;
+	sf::Vector2f mousePosView;
 
 private:
 
 };
-#endif

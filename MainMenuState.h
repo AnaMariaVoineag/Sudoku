@@ -1,5 +1,4 @@
-#ifndef MAINMENUSTATE_H
-#define MAINMENUSTATE_H
+#pragma once
 
 #include "GameState.h"
 #include "State.h"
@@ -10,12 +9,13 @@ class MainMenuState :
 {
 public:
     MainMenuState(sf::RenderWindow* window);
-    virtual ~MainMenuState();
+    ~MainMenuState();
 
     //Functions
     void endState();
-    void updateKeybinds(const float& dt);
+    void updateButtons();
     void update(const float& dt);
+    void renderButtons(sf::RenderTarget* target = NULL);
     void render(sf::RenderTarget* target = NULL);
 
 private:
@@ -23,10 +23,9 @@ private:
     sf::RectangleShape background;
     sf::Font font;
 
-    Button *gameStateBTN;
+    std::map<std::string, Button*> buttons;
 
+    void initFonts();
+    void initButtons();
+    void initKeybinds(const float& dt);
 };
-
-#endif
-
-

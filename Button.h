@@ -1,3 +1,5 @@
+#pragma once
+
 #include <iostream>
 #include <ctime>
 #include <cstdlib>
@@ -7,9 +9,6 @@
 #include <SFML/Window.hpp>
 #include <SFML/Graphics.hpp>
 #include <SFML/Audio.hpp>
-
-#ifndef BUTTON_H
-#define BUTTON_H
 
 enum button_states{BTN_IDLE = 0, BTN_HOVER, BTN_PRESSED};
 
@@ -30,11 +29,11 @@ private:
     short unsigned buttonState;
 
     sf::RectangleShape shape;
-    sf::Font* font;
+    sf::Font *font;
     sf::Text text;
 
     sf::Color idleColor;
     sf::Color hoverColor;
     sf::Color pressedColor;
 };
-#endif
+

@@ -25,6 +25,7 @@ void GameState::updateInput(const float& dt)
 
 void GameState::update(const float& dt)
 {
+	this->updateMousePos();
 	this->updateInput(dt);
 	if(sf::Keyboard::isKeyPressed(sf::Keyboard::A))
 		std::cout << "A" << std::endl;

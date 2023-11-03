@@ -1,26 +1,7 @@
-﻿  MainMenuState.cpp
-D:\faculta\Sudoku\GameState.h(1,1): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-D:\faculta\Sudoku\MainMenuState.cpp(9,78): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
-          with
-          [
-              T=unsigned int
-          ]
-          and
-          [
-              T=float
-          ]
-D:\faculta\Sudoku\MainMenuState.cpp(9,57): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
-          with
-          [
-              T=unsigned int
-          ]
-          and
-          [
-              T=float
-          ]
+﻿  Button.cpp
   Generating code
-  17 of 313 functions ( 5.4%) were compiled, the rest were copied from previous compilation.
-    2 functions were new in current compilation
-    0 functions had inline decision re-evaluated but remain unchanged
+  2 of 430 functions ( 0.5%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    1 functions had inline decision re-evaluated but remain unchanged
   Finished generating code
   Sudoku.vcxproj -> D:\faculta\Sudoku\x64\Release\Sudoku.exe
