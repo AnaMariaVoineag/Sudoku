@@ -18,7 +18,7 @@
 class State
 {
 public:
-	State(sf::RenderWindow* window);
+	State(sf::RenderWindow* window, std::stack<State*>* states);
 	~State();
 
 	const bool& getQuit() const;
@@ -30,6 +30,7 @@ public:
 	virtual void render(sf::RenderTarget* target = NULL) = 0;
 
 protected:
+	std::stack<State*>* states;
 	sf::RenderWindow* window;
 	std::vector<sf::Texture> textures;
 	bool quit;

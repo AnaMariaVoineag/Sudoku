@@ -27,36 +27,22 @@ void Sudoku::initWindow()
 	this->window->setVerticalSyncEnabled(verticalSynchEnabled);
 }
 
-void Sudoku::initMenuColor()
-{
-	this->menuColor = sf::Color(38, 45, 71);
-	this->menuColor.a = 128;
-}
 
 void Sudoku::initStates()
 {
-	//this->states.push(new GameState(this->window));
-	this->states.push(new MainMenuState(this->window));
+	
+	this->states.push(new MainMenuState(this->window, &this->states));
 }
 
-//Load the background 
-int Sudoku::bgLoader()
-{
-	if (!this->backgroundImg.loadFromFile("images/grid.jpg")) {
-		std::cout << "Could not find the background image :(" << std::endl;
-		return 1;
-	}
 
-	return 0;
-}
 
 //Constructor
 Sudoku::Sudoku()
 {
 	this->initWindow();
-	this->bgLoader();
-	this->initMenuColor();
 	this->initStates();
+
+	
 }
 
 //Destructor
@@ -107,29 +93,20 @@ void Sudoku::update()
 		this->endApplication();
 		this->window->close();
 	}
-
-	
-
 }
 
 void Sudoku::render()
 {
 	this->window->clear();
 
-	//Render items
-	sf::Sprite backgroundSprite(this->backgroundImg);
-	this->window->draw(backgroundSprite);
-
-	sf::RectangleShape rectangle(sf::Vector2f(308.f, 1080.f));
-	rectangle.setFillColor(this->menuColor);
-	this->window->draw(rectangle);
-
 	if (!this->states.empty())
 	{
 		this->states.top()->render();
 	}
 
+	//this->window->draw(this->background);
 	this->window->display();
+	
 }
 
 void Sudoku::run()

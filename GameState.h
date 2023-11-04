@@ -6,7 +6,7 @@ class GameState :
     public State
 {
 public:
-    GameState(sf::RenderWindow* window);
+    GameState(sf::RenderWindow* window, std::stack<State*>* states);
     ~GameState();
 
     //Functions
@@ -16,5 +16,6 @@ public:
     void render(sf::RenderTarget* target = NULL);
 
 private:
+    sf::RectangleShape background;
 
 };

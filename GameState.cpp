@@ -1,9 +1,10 @@
 #include "GameState.h"
 
-GameState::GameState(sf::RenderWindow* window)
-	: State(window)
+GameState::GameState(sf::RenderWindow* window, std::stack<State*>* states)
+	: State(window, states)
 {
-
+	this->background.setSize(sf::Vector2f(window->getSize().x, window->getSize().y));
+	this->background.setFillColor(sf::Color::White);
 }
 
 GameState::~GameState()
@@ -33,5 +34,9 @@ void GameState::update(const float& dt)
 
 void GameState::render(sf::RenderTarget* target)
 {
+	if (!target)
+		target = this->window;
 
+	target->draw(this->background);
+	
 }

@@ -15,7 +15,7 @@ enum button_states{BTN_IDLE = 0, BTN_HOVER, BTN_PRESSED};
 class Button {
 public:
     Button(float x, float y, float width, float height, sf::Font* font, 
-    std::string text, sf::Color idleColor, sf::Color hoverColor, sf::Color pressedColor);
+    std::string text, sf::Color idleColor, sf::Color hoverColor, sf::Color pressedColor, unsigned int textSize);
     ~Button();
 
     //Accessors
@@ -27,6 +27,7 @@ public:
 
 private:
     short unsigned buttonState;
+    unsigned int textSize;
 
     sf::RectangleShape shape;
     sf::Font *font;

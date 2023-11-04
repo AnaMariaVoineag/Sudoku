@@ -1,14 +1,14 @@
 #include "MainMenuState.h"
+#include "Sudoku.h"
 
-MainMenuState::MainMenuState(sf::RenderWindow* window)
-	: State(window)
+MainMenuState::MainMenuState(sf::RenderWindow* window, std::stack<State*>* states)
+	: State(window, states)
 {
 	
 	this->initFonts();
 	this->initButtons();
-
-	this->background.setSize(sf::Vector2f(window->getSize().x, window->getSize().y));
-	this->background.setFillColor(sf::Color::Magenta);
+	this->bgLoader();
+	this->initMenuColor();
 
 }
 
@@ -22,13 +22,33 @@ MainMenuState::~MainMenuState()
 }
 void MainMenuState::initButtons()
 {
-	this->buttons["GAME_STATE"] = new Button(68, 185, 245, 45, &this->font,
-		"How to play", sf::Color(70, 70, 70, 200), sf::Color(150, 150, 150, 255), 
-		sf::Color(20, 20, 20, 200));
+	this->buttons["GAME_STATE"] = new Button(70, 185, 170, 45, &this->font,
+		"How to play", sf::Color(29, 34, 56), sf::Color(31, 38, 65),
+		sf::Color(20, 20, 20, 200), 30);
 
-	this->buttons["EXIT_STATE"] = new Button(101, 240, 207, 50, &this->font,
-		"Quit", sf::Color(100, 100, 100, 200), sf::Color(150, 150, 150, 255), 
-		sf::Color(20, 20, 20, 200));
+	this->buttons["NEW_GAME"] = new Button(100, 240, 117, 34, &this->font,
+		"New Game", sf::Color(29, 34, 56), sf::Color(31, 38, 65),
+		sf::Color(20, 20, 20, 200), 28);
+
+	this->buttons["LOAD_GAME"] = new Button(100, 285, 117, 34, &this->font,
+		"Load Game", sf::Color(29, 34, 56), sf::Color(31, 38, 65),
+		sf::Color(20, 20, 20, 200), 28);
+
+}
+
+//Load the background 
+void MainMenuState::bgLoader()
+{
+	if (!this->backgroundImg.loadFromFile("images/grid.jpg")) 
+	{
+		std::cout << "Could not find the background image :(" << std::endl;
+	}
+}
+
+void MainMenuState::initMenuColor()
+{
+	this->menuColor = sf::Color(38, 45, 71);
+	this->menuColor.a = 128;
 }
 
 void MainMenuState::initFonts()
@@ -40,11 +60,9 @@ void MainMenuState::initFonts()
 }
 
 
-
-
 void MainMenuState::endState()
 {
-	std::cout << "Ending GameState!" << std::endl;
+	std::cout << "Ending MainMenuState!" << std::endl;
 }
 
 void MainMenuState::updateButtons()
@@ -54,11 +72,13 @@ void MainMenuState::updateButtons()
 		it.second->update(this->mousePosView);
 	}
 
-	//Quit the game
-	if (this->buttons["EXIT_STATE"]->isPressed())
+	//New Game
+	if (this->buttons["NEW_GAME"]->isPressed())
 	{
-		this->endState();
+		this->states->push(new GameState(this->window, this->states));
 	}
+
+	
 }
 
 void MainMenuState::initKeybinds(const float& dt)
@@ -88,7 +108,14 @@ void MainMenuState::render(sf::RenderTarget* target)
 	if (!target)
 		target = this->window;
 
-	target->draw(this->background);
+	//Render items
+	sf::Sprite backgroundSprite(this->backgroundImg);
+	this->window->draw(backgroundSprite);
+
+	sf::RectangleShape rectangle(sf::Vector2f(308.f, 1080.f));
+	rectangle.setFillColor(this->menuColor);
+	this->window->draw(rectangle);
+
 	this->renderButtons(target);
 }
 
