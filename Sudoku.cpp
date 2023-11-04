@@ -41,8 +41,6 @@ Sudoku::Sudoku()
 {
 	this->initWindow();
 	this->initStates();
-
-	
 }
 
 //Destructor
