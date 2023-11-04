@@ -35,7 +35,7 @@ void Sudoku::initMenuColor()
 
 void Sudoku::initStates()
 {
-	this->states.push(new GameState(this->window));
+	//this->states.push(new GameState(this->window));
 	this->states.push(new MainMenuState(this->window));
 }
 
