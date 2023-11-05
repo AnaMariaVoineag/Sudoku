@@ -3,8 +3,10 @@
 GameState::GameState(sf::RenderWindow* window, std::stack<State*>* states)
 	: State(window, states)
 {
+	window->setTitle("Sudoku");
+
 	this->background.setSize(sf::Vector2f(window->getSize().x, window->getSize().y));
-	this->background.setFillColor(sf::Color::White);
+	this->background.setFillColor(sf::Color(29, 34, 56));
 }
 
 GameState::~GameState()

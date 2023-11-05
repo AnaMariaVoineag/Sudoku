@@ -1,5 +1,6 @@
 #pragma once
 
+#include "HowToPlay.h"
 #include "GameState.h"
 #include "State.h"
 #include "Button.h"

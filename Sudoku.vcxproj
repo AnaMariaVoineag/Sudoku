@@ -135,6 +135,7 @@
   <ItemGroup>
     <ClCompile Include="Button.cpp" />
     <ClCompile Include="GameState.cpp" />
+    <ClCompile Include="HowToPlay.cpp" />
     <ClCompile Include="MainMenuState.cpp" />
     <ClCompile Include="State.cpp" />
     <ClCompile Include="Sudoku.cpp" />
@@ -143,9 +144,13 @@
   <ItemGroup>
     <ClInclude Include="Button.h" />
     <ClInclude Include="GameState.h" />
+    <ClInclude Include="HowToPlay.h" />
     <ClInclude Include="MainMenuState.h" />
     <ClInclude Include="State.h" />
     <ClInclude Include="Sudoku.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="instructions.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
