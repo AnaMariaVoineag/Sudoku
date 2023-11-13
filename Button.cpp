@@ -41,19 +41,19 @@ const bool Button::isPressed() const
 
 //Functions
 
-void Button::update(const sf::Vector2f mousePos)
+void Button::update(const sf::Vector2f keyPos)
 {
     //Update the booleans for hover and pressed
 
     //Idle
     this->buttonState = BTN_IDLE;
     //Hover
-    if (this->shape.getGlobalBounds().contains(mousePos))
+    if (this->shape.getGlobalBounds().contains(keyPos))
     {
         this->buttonState = BTN_HOVER;
 
         //Pressed
-        if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Enter))
         {
             this->buttonState = BTN_PRESSED;
         }
@@ -84,4 +84,16 @@ void Button::render(sf::RenderTarget* target)
 {
     target->draw(this->shape);
     target->draw(this->text);
+}
+
+void Button::setHoverColor(bool isHovered)
+{
+    if (isHovered)
+    {
+        this->shape.setFillColor(this->hoverColor);
+    }
+    else
+    {
+        this->shape.setFillColor(this->idleColor);
+    }
 }

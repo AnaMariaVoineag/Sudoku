@@ -30,7 +30,6 @@ void Sudoku::initWindow()
 
 void Sudoku::initStates()
 {
-	
 	this->states.push(new MainMenuState(this->window, &this->states));
 }
 

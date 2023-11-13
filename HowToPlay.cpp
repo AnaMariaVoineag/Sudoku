@@ -9,7 +9,7 @@ HowToPlay::HowToPlay(sf::RenderWindow* window, std::stack<State*>* states)
 	this->instructionsText.setFont(this->font);
 	this->instructionsText.setCharacterSize(24);
 	this->instructionsText.setFillColor(sf::Color::White);
-	this->instructionsText.setString(" Instructions:\n 1 jucator\n GOAL: sa se puna numere in matricea de 9x9 astfel incat sa se regaseasca pe fiecare liniesi coloana toate numerele de la 1 la 9\n\n Cerinte:\n - sa se implementeze functionalitatea jocului\n - sa se creeze un meniu principal\n - sa se creeze un helper care sa ne explice regulile jocului\n - sa se contorizeze durata jocului\n - sa se stocheze numele jucatorului si timpul pana la castig\n - sa se poata stoca starea unui joc si sa putem continua jocul de unde am ramas\n - in cazul in are rezolvarea este gresita sa avem un helper care ne spune unde este greseala");
+	this->instructionsText.setString(" Sudoku Rules:\n - Start with a 9x9 grid, divided into nine 3x3 subgrids called regions or boxes. Each box is further divided into 3x3 cells, making a total of 81 cells in the entire grid.\n - Fill in the grid with the numbers 1 through 9. Each row, column, and region must contain all of the numbers from 1 to 9 without repetition.\n - If some numbers are already filled in, you cannot change them.\n - No row, column, or region can have repeated numbers. Each number must appear only once in each row, column, and region.\n - Solve the puzzle using logic and deduction. You don't need to guess. If you reach a point where you have to guess, then you may have made a mistake.");
 
 	this->background.setSize(sf::Vector2f(window->getSize().x, window->getSize().y));
 	this->background.setFillColor(sf::Color(29, 34, 56));
@@ -44,7 +44,7 @@ void HowToPlay::updateInput(const float& dt)
 
 void HowToPlay::update(const float& dt)
 {
-	this->updateMousePos();
+	//this->updateMousePos();
 	this->updateInput(dt);
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::A))
 		std::cout << "B" << std::endl;

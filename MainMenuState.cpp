@@ -3,15 +3,14 @@
 
 
 MainMenuState::MainMenuState(sf::RenderWindow* window, std::stack<State*>* states)
-	: State(window, states)
+	: State(window, states), selectedButtonIndex(0), buttonChangeTimer(0.0f) 
 {
+
 	this->window->setTitle("Main Menu");
 	this->initFonts();
 	this->initButtons();
 	this->bgLoader();
 	this->initMenuColor();
-	
-
 }
 
 MainMenuState::~MainMenuState()
@@ -25,17 +24,16 @@ MainMenuState::~MainMenuState()
 void MainMenuState::initButtons()
 {
 	this->buttons["HOW_TO_PLAY"] = new Button(70, 185, 170, 45, &this->font,
-		"How to play", sf::Color(29, 34, 56), sf::Color(31, 38, 65),
+		"How to play", sf::Color(29, 34, 56), sf::Color(sf::Color::Magenta),
 		sf::Color(20, 20, 20, 200), 30);
 
 	this->buttons["NEW_GAME"] = new Button(100, 240, 121, 34, &this->font,
-		"New Game", sf::Color(29, 34, 56), sf::Color(31, 38, 65),
+		"New Game", sf::Color(29, 34, 56), sf::Color(sf::Color::Magenta),
 		sf::Color(20, 20, 20, 200), 24);
 
 	this->buttons["LOAD_GAME"] = new Button(100, 285, 126, 25, &this->font,
-		"Load Game", sf::Color(29, 34, 56), sf::Color(31, 38, 65),
+		"Load Game", sf::Color(29, 34, 56), sf::Color(sf::Color::Magenta),
 		sf::Color(20, 20, 20, 200), 24);
-
 }
 
 //Load the background 
@@ -67,29 +65,69 @@ void MainMenuState::endState()
 	std::cout << "Ending MainMenuState!" << std::endl;
 }
 
-void MainMenuState::updateButtons()
+void MainMenuState::updateButtons(const float& dt)
 {
-	for (auto &it : this->buttons) 
+	// Define a time delay between button changes (in seconds)
+	static const float BUTTON_CHANGE_DELAY = 0.2f;
+
+	// Update the button change timer
+	buttonChangeTimer += dt;
+
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up) && buttonChangeTimer > BUTTON_CHANGE_DELAY)
 	{
-		it.second->update(this->mousePosView);
+		if (selectedButtonIndex < buttons.size() - 1)
+			selectedButtonIndex++;
+		else
+			selectedButtonIndex = 0;
+
+		// Reset the timer
+		buttonChangeTimer = 0.0f;
+	}
+	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down) && buttonChangeTimer > BUTTON_CHANGE_DELAY)
+	{
+
+		if (selectedButtonIndex > 0)
+			selectedButtonIndex--;
+		else
+			selectedButtonIndex = buttons.size() - 1; // Wrap to the last button
+
+		// Reset the timer
+		buttonChangeTimer = 0.0f;
 	}
 
-	//How to play
-	if (this->buttons["HOW_TO_PLAY"]->isPressed())
+	// Handle enter/return key press
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Enter) || sf::Keyboard::isKeyPressed(sf::Keyboard::Return))
 	{
-		this->states->push(new HowToPlay(this->window, this->states));
+		switch (selectedButtonIndex)
+		{
+		case 0:
+			this->states->push(new HowToPlay(this->window, this->states));
+			break;
+		case 1:
+			this->states->push(new GameState(this->window, this->states));
+			break;
+		case 2:
+			this->states->push(new LoadGame(this->window, this->states));
+			break;
+		}
 	}
-
-	//New Game
-	if (this->buttons["NEW_GAME"]->isPressed())
-	{
-		this->states->push(new GameState(this->window, this->states));
-	}
-
-	
-
-	
 }
+
+
+
+
+void MainMenuState::renderButtons(sf::RenderTarget* target)
+{
+	size_t index = 0;
+	for (auto& it : this->buttons)
+	{
+		it.second->setHoverColor(selectedButtonIndex == index);
+		it.second->render(target);
+
+		index++;
+	}
+}
+
 
 void MainMenuState::initKeybinds(const float& dt)
 {
@@ -99,19 +137,13 @@ void MainMenuState::initKeybinds(const float& dt)
 
 void MainMenuState::update(const float& dt)
 {
-	this->updateMousePos();
+	//this->updateMousePos();
 	this->initKeybinds(dt);
-	this->updateButtons();
+	this->updateButtons(dt);
 	
 }
 
-void MainMenuState::renderButtons(sf::RenderTarget* target)
-{
-	for (auto& it : this->buttons)
-	{
-		it.second->render(target);
-	}
-}
+
 
 void MainMenuState::render(sf::RenderTarget* target)
 {

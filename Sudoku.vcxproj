@@ -136,6 +136,7 @@
     <ClCompile Include="Button.cpp" />
     <ClCompile Include="GameState.cpp" />
     <ClCompile Include="HowToPlay.cpp" />
+    <ClCompile Include="LoadGame.cpp" />
     <ClCompile Include="MainMenuState.cpp" />
     <ClCompile Include="State.cpp" />
     <ClCompile Include="Sudoku.cpp" />
@@ -145,6 +146,7 @@
     <ClInclude Include="Button.h" />
     <ClInclude Include="GameState.h" />
     <ClInclude Include="HowToPlay.h" />
+    <ClInclude Include="LoadGame.h" />
     <ClInclude Include="MainMenuState.h" />
     <ClInclude Include="State.h" />
     <ClInclude Include="Sudoku.h" />

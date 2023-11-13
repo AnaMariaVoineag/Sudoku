@@ -22,8 +22,9 @@ public:
     const bool isPressed() const;
 
     //Functions
-    void update(const sf::Vector2f mousePos);
+    void update(const sf::Vector2f keyPos);
     void render(sf::RenderTarget* target);
+    void setHoverColor(bool isHovered);
 
 private:
     short unsigned buttonState;
@@ -36,5 +37,6 @@ private:
     sf::Color idleColor;
     sf::Color hoverColor;
     sf::Color pressedColor;
+    
 };
 
