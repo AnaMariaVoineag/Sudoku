@@ -1,1 +1,2 @@
 D:\faculta\Sudoku\x64\Release\Sudoku.exe
+C:\Users\MACARIA\Desktop\SUDOKU\Sudoku\x64\Release\Sudoku.exe

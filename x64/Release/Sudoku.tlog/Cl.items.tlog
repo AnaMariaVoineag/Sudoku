@@ -1,8 +1,9 @@
-D:\faculta\Sudoku\Button.cpp;D:\faculta\Sudoku\x64\Release\Button.obj
-D:\faculta\Sudoku\GameState.cpp;D:\faculta\Sudoku\x64\Release\GameState.obj
-D:\faculta\Sudoku\HowToPlay.cpp;D:\faculta\Sudoku\x64\Release\HowToPlay.obj
-D:\faculta\Sudoku\LoadGame.cpp;D:\faculta\Sudoku\x64\Release\LoadGame.obj
-D:\faculta\Sudoku\MainMenuState.cpp;D:\faculta\Sudoku\x64\Release\MainMenuState.obj
-D:\faculta\Sudoku\State.cpp;D:\faculta\Sudoku\x64\Release\State.obj
-D:\faculta\Sudoku\Sudoku.cpp;D:\faculta\Sudoku\x64\Release\Sudoku.obj
-D:\faculta\Sudoku\main.cpp;D:\faculta\Sudoku\x64\Release\main.obj
+C:\Users\MACARIA\Desktop\SUDOKU\Sudoku\Button.cpp;C:\Users\MACARIA\Desktop\SUDOKU\Sudoku\x64\Release\Button.obj
+C:\Users\MACARIA\Desktop\SUDOKU\Sudoku\GameState.cpp;C:\Users\MACARIA\Desktop\SUDOKU\Sudoku\x64\Release\GameState.obj
+C:\Users\MACARIA\Desktop\SUDOKU\Sudoku\HowToPlay.cpp;C:\Users\MACARIA\Desktop\SUDOKU\Sudoku\x64\Release\HowToPlay.obj
+C:\Users\MACARIA\Desktop\SUDOKU\Sudoku\LoadGame.cpp;C:\Users\MACARIA\Desktop\SUDOKU\Sudoku\x64\Release\LoadGame.obj
+C:\Users\MACARIA\Desktop\SUDOKU\Sudoku\MainMenuState.cpp;C:\Users\MACARIA\Desktop\SUDOKU\Sudoku\x64\Release\MainMenuState.obj
+C:\Users\MACARIA\Desktop\SUDOKU\Sudoku\State.cpp;C:\Users\MACARIA\Desktop\SUDOKU\Sudoku\x64\Release\State.obj
+C:\Users\MACARIA\Desktop\SUDOKU\Sudoku\Sudoku.cpp;C:\Users\MACARIA\Desktop\SUDOKU\Sudoku\x64\Release\Sudoku.obj
+C:\Users\MACARIA\Desktop\SUDOKU\Sudoku\main.cpp;C:\Users\MACARIA\Desktop\SUDOKU\Sudoku\x64\Release\main.obj
+C:\Users\MACARIA\Desktop\SUDOKU\Sudoku\SudokuGenerator.cpp;C:\Users\MACARIA\Desktop\SUDOKU\Sudoku\x64\Release\SudokuGenerator.obj
