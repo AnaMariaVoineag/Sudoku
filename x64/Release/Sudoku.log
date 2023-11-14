@@ -1,8 +1,49 @@
 ﻿  MainMenuState.cpp
-D:\faculta\Sudoku\MainMenuState.cpp(92,41): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
-  Generating code
-  0 of 454 functions ( 0.0%) were compiled, the rest were copied from previous compilation.
-    0 functions were new in current compilation
-    0 functions had inline decision re-evaluated but remain unchanged
-  Finished generating code
-  Sudoku.vcxproj -> D:\faculta\Sudoku\x64\Release\Sudoku.exe
+D:\faculta\Sudoku\MainMenuState.cpp : fatal  error C1041: cannot open program database 'D:\faculta\Sudoku\x64\Release\vc143.pdb'; if multiple CL.EXE write to the same .PDB file, please use /FS
+  SudokuGenerator.cpp
+D:\faculta\Sudoku\SudokuGenerator.cpp(13,12): error C2143: syntax error: missing ';' before '<<'
+D:\faculta\Sudoku\SudokuGenerator.cpp(13,12): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\faculta\Sudoku\SudokuGenerator.cpp(13,7): error C2371: 'std::cout': redefinition; different basic types
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\iostream(40,75): message : see declaration of 'std::cout'
+D:\faculta\Sudoku\SudokuGenerator.cpp(13,12): error C2059: syntax error: '<<'
+D:\faculta\Sudoku\SudokuGenerator.cpp(14,12): error C2143: syntax error: missing ';' before '<<'
+D:\faculta\Sudoku\SudokuGenerator.cpp(14,12): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\faculta\Sudoku\SudokuGenerator.cpp(14,7): error C2371: 'std::cout': redefinition; different basic types
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\iostream(40,75): message : see declaration of 'std::cout'
+D:\faculta\Sudoku\SudokuGenerator.cpp(14,12): error C2059: syntax error: '<<'
+D:\faculta\Sudoku\SudokuGenerator.cpp(15,12): error C2143: syntax error: missing ';' before '<<'
+D:\faculta\Sudoku\SudokuGenerator.cpp(15,12): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\faculta\Sudoku\SudokuGenerator.cpp(15,7): error C2371: 'std::cout': redefinition; different basic types
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\iostream(40,75): message : see declaration of 'std::cout'
+D:\faculta\Sudoku\SudokuGenerator.cpp(15,12): error C2059: syntax error: '<<'
+D:\faculta\Sudoku\SudokuGenerator.cpp(16,12): error C2143: syntax error: missing ';' before '<<'
+D:\faculta\Sudoku\SudokuGenerator.cpp(16,12): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\faculta\Sudoku\SudokuGenerator.cpp(16,7): error C2371: 'std::cout': redefinition; different basic types
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\iostream(40,75): message : see declaration of 'std::cout'
+D:\faculta\Sudoku\SudokuGenerator.cpp(16,12): error C2059: syntax error: '<<'
+D:\faculta\Sudoku\SudokuGenerator.cpp(17,12): error C2143: syntax error: missing ';' before '<<'
+D:\faculta\Sudoku\SudokuGenerator.cpp(17,12): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\faculta\Sudoku\SudokuGenerator.cpp(17,7): error C2371: 'std::cout': redefinition; different basic types
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\iostream(40,75): message : see declaration of 'std::cout'
+D:\faculta\Sudoku\SudokuGenerator.cpp(17,12): error C2059: syntax error: '<<'
+D:\faculta\Sudoku\SudokuGenerator.cpp(18,12): error C2143: syntax error: missing ';' before '<<'
+D:\faculta\Sudoku\SudokuGenerator.cpp(18,12): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\faculta\Sudoku\SudokuGenerator.cpp(18,7): error C2371: 'std::cout': redefinition; different basic types
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\iostream(40,75): message : see declaration of 'std::cout'
+D:\faculta\Sudoku\SudokuGenerator.cpp(18,12): error C2059: syntax error: '<<'
+D:\faculta\Sudoku\SudokuGenerator.cpp(20,11): error C2143: syntax error: missing ';' before '>>'
+D:\faculta\Sudoku\SudokuGenerator.cpp(20,11): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\faculta\Sudoku\SudokuGenerator.cpp(20,7): error C2371: 'std::cin': redefinition; different basic types
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\iostream(39,75): message : see declaration of 'std::cin'
+D:\faculta\Sudoku\SudokuGenerator.cpp(20,11): error C2059: syntax error: '>>'
+D:\faculta\Sudoku\SudokuGenerator.cpp(21,2): error C2059: syntax error: 'switch'
+D:\faculta\Sudoku\SudokuGenerator.cpp(21,13): error C2143: syntax error: missing ';' before '{'
+D:\faculta\Sudoku\SudokuGenerator.cpp(21,13): error C2447: '{': missing function header (old-style formal list?)
+D:\faculta\Sudoku\SudokuGenerator.cpp(48,1): error C2059: syntax error: '}'
+D:\faculta\Sudoku\SudokuGenerator.cpp(48,1): error C2143: syntax error: missing ';' before '}'
+D:\faculta\Sudoku\SudokuGenerator.cpp(49,58): error C2143: syntax error: missing ';' before '{'
+D:\faculta\Sudoku\SudokuGenerator.cpp(49,58): error C2447: '{': missing function header (old-style formal list?)
+D:\faculta\Sudoku\SudokuGenerator.cpp(158,14): error C2088: '<<': illegal for class
+D:\faculta\Sudoku\SudokuGenerator.cpp(159,13): error C2088: '<<': illegal for class
+D:\faculta\Sudoku\SudokuGenerator.cpp(166,14): error C2088: '<<': illegal for class
+D:\faculta\Sudoku\SudokuGenerator.cpp(167,13): error C2088: '<<': illegal for class
