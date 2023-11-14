@@ -141,6 +141,7 @@
     <ClCompile Include="State.cpp" />
     <ClCompile Include="Sudoku.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="SudokuGenerator.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Button.h" />
@@ -150,9 +151,7 @@
     <ClInclude Include="MainMenuState.h" />
     <ClInclude Include="State.h" />
     <ClInclude Include="Sudoku.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <Text Include="instructions.txt" />
+    <ClInclude Include="SudokuGenerator.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -31,7 +31,7 @@ void MainMenuState::initButtons()
 		"New Game", sf::Color(29, 34, 56), sf::Color(sf::Color::Magenta),
 		sf::Color(20, 20, 20, 200), 24);
 
-	this->buttons["LOAD_GAME"] = new Button(100, 285, 126, 25, &this->font,
+	this->buttons["LOAD_GAME"] = new Button(100, 285, 126, 34, &this->font,
 		"Load Game", sf::Color(29, 34, 56), sf::Color(sf::Color::Magenta),
 		sf::Color(20, 20, 20, 200), 24);
 }

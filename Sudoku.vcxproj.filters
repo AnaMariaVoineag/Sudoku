@@ -42,6 +42,9 @@
     <ClCompile Include="LoadGame.cpp">
       <Filter>States</Filter>
     </ClCompile>
+    <ClCompile Include="SudokuGenerator.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Button.h">
@@ -65,10 +68,8 @@
     <ClInclude Include="LoadGame.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <Text Include="instructions.txt">
+    <ClInclude Include="SudokuGenerator.h">
       <Filter>Header Files</Filter>
-    </Text>
+    </ClInclude>
   </ItemGroup>
 </Project>
