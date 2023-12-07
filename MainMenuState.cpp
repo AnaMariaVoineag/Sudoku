@@ -104,17 +104,14 @@ void MainMenuState::updateButtons(const float& dt)
 			this->states->push(new HowToPlay(this->window, this->states));
 			break;
 		case 1:
-			this->states->push(new GameState(this->window, this->states));
+			this->states->push(new LoadGame(this->window, this->states));
 			break;
 		case 2:
-			this->states->push(new LoadGame(this->window, this->states));
+			this->states->push(new GameState(this->window, this->states));
 			break;
 		}
 	}
 }
-
-
-
 
 void MainMenuState::renderButtons(sf::RenderTarget* target)
 {
@@ -123,7 +120,6 @@ void MainMenuState::renderButtons(sf::RenderTarget* target)
 	{
 		it.second->setHoverColor(selectedButtonIndex == index);
 		it.second->render(target);
-
 		index++;
 	}
 }

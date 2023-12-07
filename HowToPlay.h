@@ -1,6 +1,7 @@
 #pragma once
 
 #include "State.h"
+#include "MainMenuState.h"
 #include <fstream>
 
 class HowToPlay :
@@ -10,19 +11,22 @@ public:
     HowToPlay(sf::RenderWindow* window, std::stack<State*>* states);
     ~HowToPlay();
 
-    //Functions
     void endState();
     void updateInput(const float& dt);
     void update(const float& dt);
-    void render(sf::RenderTarget* target = NULL);
-    void fileReader();
+    void render(sf::RenderTarget* target = nullptr);
 
     //Initializer
     void initFonts();
 
+    void bgLoader();
+
+    void photosLoader();
+
 private:
-    sf::RectangleShape background;
     sf::Text instructionsText;
     sf::Font font;
+    sf::Texture backgroundImg;
+    sf::Texture photos;
 
 };

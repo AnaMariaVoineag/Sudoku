@@ -28,6 +28,7 @@ public:
 	virtual void update(const float& dt) = 0;
 	virtual void render(sf::RenderTarget* target = NULL) = 0;
 
+
 protected:
 	std::stack<State*>* states;
 	sf::RenderWindow* window;

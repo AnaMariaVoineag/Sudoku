@@ -120,7 +120,7 @@ bool SudokuGenerator::umplu_restul(int i, int j) {
 	for (int nr = 1; nr <= 9; nr++)
 		if (verif_complet(i, j, nr))
 		{
-			matr[i][j] = nr;
+			this->matr[i][j] = nr;
 			if (umplu_restul(i, j + 1))
 				return true;
 			matr[i][j] = 0;
