@@ -1,0 +1,20 @@
+<RCC>
+    <qresource prefix="/">
+        <file>UI/screens/HomeScreen.qml</file>
+        <file>UI/screens/HowToPlayWindow.qml</file>
+        <file>UI/screens/NewGame.qml</file>
+        <file>UI/assets/component.png</file>
+        <file>UI/assets/icon.png</file>
+        <file>UI/assets/mainMenuScreen.png</file>
+        <file>UI/assets/pLAY1.png</file>
+        <file>UI/assets/scores_leaderboard.png</file>
+        <file>UI/assets/vj_photo_1.png</file>
+        <file>UI/screens/vj_photo_1.png</file>
+        <file>UI/screens/dwigt_photo.png</file>
+        <file>main.qml</file>
+    </qresource>
+    <qresource prefix="/sounds">
+        <file>international_love.mp3</file>
+        <file>DJPlay.mp3</file>
+    </qresource>
+</RCC>
