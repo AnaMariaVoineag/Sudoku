@@ -152,7 +152,7 @@ Item {
              id: rectangle_purple
              x: 395
              y: 229
-             width: 203
+             width: 136
              height: 38
              color: "#783b67"
              radius: 33
@@ -160,13 +160,13 @@ Item {
 
 
         Text {
-               id: select_dificulty
+               id: dificulty
                x: 406
                y: 234
                color: "white"
                width: 197
                height: 28
-               text: "Select the difficulty:"
+               text: "Game levels:"
                font.pixelSize: 20
                horizontalAlignment: Text.AlignLeft
                verticalAlignment: Text.AlignTop
@@ -210,9 +210,11 @@ Item {
                       font.pixelSize: 30
 
 
-                      Text {
-                             id: how_to_play
-                             color: "#ffffff"
+                      contentItem: Text {
+                             text: btn1.text
+                             color: btn1.hovered ? "#ea74de" : "#ffffff"
+                             font.family: "Inria Serif"
+                             font.pixelSize: 30
                              horizontalAlignment: Text.AlignLeft
                              verticalAlignment: Text.AlignTop
                              wrapMode: Text.Wrap
@@ -220,34 +222,30 @@ Item {
                       }
                }
 
-
-
                Button {
-                        x: 58
-                        y: 246
-                        width: 188
+                        id: new_Game
+                        x: 81
+                        y: 244
+                        width: 167
                         height: 34
                         onClicked: classA.newGameWindow()
-                        text: qsTr(" New Game ")
+                        text: "New Game"
                         background: Rectangle {
                                color: "transparent"
                         }
 
-                        font.family: "Inria Serif"
-                        font.pixelSize: 26
 
-                        Text {
-                               id: new_Game
-                               color: "#ffffff"
+                        contentItem: Text {
+                               text: new_Game.text
+                               color: new_Game.hovered ? "#a9caf9" : "#ffffff"
+                               font.family: "Inria Serif"
+                               font.pixelSize: 26
                                horizontalAlignment: Text.AlignLeft
                                verticalAlignment: Text.AlignTop
                                wrapMode: Text.Wrap
                                font.weight: Font.Normal
                         }
                  }
-
-
-
 
         Text {
                id: load_game
@@ -266,9 +264,10 @@ Item {
         }
 
         Button {
-            x: -51
-            y: 332
-            width: 350
+            id: btnMusic
+            x: 81
+            y: 322
+            width: 207
             height: 24
             property bool isPlaying: false
              onClicked: {
@@ -276,17 +275,16 @@ Item {
                  isPlaying = !isPlaying;
              }
 
-            text: qsTr("Sound")
+            text: "Sound"
             background: Rectangle {
                 color: "transparent"
             }
 
-            font.pixelSize: 24
-            font.family: "Inria Serif"
-
-            Text {
-                id: musical_sound
-                color: "#ffffff"
+            contentItem: Text {
+                color: btnMusic.hovered ? "#a9caf9" : "#ffffff"
+                text: btnMusic.text
+                font.pixelSize: 24
+                font.family: "Inria Serif"
                 horizontalAlignment: Text.AlignLeft
                 verticalAlignment: Text.AlignTop
                 wrapMode: Text.Wrap
@@ -294,21 +292,5 @@ Item {
             }
         }
 
-        Text {
-                id: enter_keywords
-                x: 396
-                y: 45
-                width: 177
-                height: 29
-                color: "#9396a9"
-                text: qsTr("Enter keywords")
-                font.pixelSize: 24
-                horizontalAlignment: Text.AlignLeft
-                verticalAlignment: Text.AlignTop
-                wrapMode: Text.NoWrap
-                font.weight: Font.Normal
-                font.family: "Inter"
-        }
 
 }
-

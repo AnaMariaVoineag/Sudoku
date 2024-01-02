@@ -73,12 +73,12 @@ Window {
             
             Image {
                 Image {
-                    id: vj_photo_1
+                    id: vj_photo
                     x: 854
                     y: -7
                     width: 724
                     height: 962
-                    source: "vj_photo_1.png"
+                    source: "vj_photo.png"
                     fillMode: Image.Stretch
                 }
             }
