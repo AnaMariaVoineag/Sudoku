@@ -16,24 +16,39 @@ void InitClass::howToPlayWindow()
     {
         component.create();
     } else {
-        std::cout << "Error loading new window: " << component.errorString().toStdString() << std::endl;
+        std::cout << "Error loading window: " << component.errorString().toStdString() << std::endl;
     }
 
 }
 
-void InitClass::newGameWindow()
+void InitClass:: registerWindow()
 {
     QQmlComponent component(this->engine);
-    component.loadUrl(QUrl(QStringLiteral("qrc:/UI/screens/NewGame.qml")));
+    component.loadUrl(QUrl(QStringLiteral("qrc:/UI/screens/Register.qml")));
 
     if(component.isReady())
     {
         component.create();
     } else {
-        std::cout << "Error loading new window: " << component.errorString().toStdString() << std::endl;
+        std::cout << "Error loading window: " << component.errorString().toStdString() << std::endl;
     }
 
 }
+
+void InitClass::mainMenu()
+{
+    QQmlComponent component(this->engine);
+    component.loadUrl(QUrl(QStringLiteral("qrc:/main.qml")));
+
+    if(component.isReady())
+    {
+        component.create();
+    } else {
+        std::cout << "Error loading window: " << component.errorString().toStdString() << std::endl;
+    }
+}
+
+
 
 
 

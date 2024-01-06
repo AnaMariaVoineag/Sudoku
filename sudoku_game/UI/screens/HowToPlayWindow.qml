@@ -18,11 +18,11 @@ Window {
             x: 0
             y: 0
             width: 1920
-            height: 1151
+            height: 1080
             color: "#1D2238"
 
             Text {
-                id: start_with_a_9x9_grid_divided_into_nine_3x3_subgrids_called_regi
+                id: instructions_content
                 color: "#ffffff"
                 text: qsTr("\n- start with a 9x9 grid, divided into nine 3x3 subgrids called regions or boxes. Each box is further divided into 3x3 cells, making a total of 81 cells in the entire grid.\n- fill in the grid with the numbers 1 through 9. Each row, column, and region must contain all of the numbers from 1 to 9 without repetition.\n- if some numbers are already filled in you cannot change them.\n- no row, column, or region can have repeated numbers. Each number must appear only once in each row, column, and region.\n- solve the puzzle using logic and deduction. You don't need to guess. If you reach a point where you have to guess, then you may have made a mistake.\n")
                 anchors {

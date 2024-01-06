@@ -80,13 +80,13 @@ Item {
 
 
         Text {
-            id: medium_level
+            id: diff_level
             color: "white"
             x: 1036
             y: 500
             width: 90
             height: 30
-            text: "Medium"
+            text: "Difficult"
             font.pixelSize: 20
             horizontalAlignment: Text.AlignHCenter
             verticalAlignment: Text.AlignTop
@@ -98,13 +98,13 @@ Item {
 
 
         Text {
-            id: hard_level
+            id: medium_level
             color: "white"
             x: 835
             y: 500
             width: 102
             height: 20
-            text: "Difficult"
+            text: "Medium"
             font.pixelSize: 20
             horizontalAlignment: Text.AlignHCenter
             verticalAlignment: Text.AlignTop
@@ -223,21 +223,21 @@ Item {
                }
 
                Button {
-                        id: new_Game
+                        id: register
                         x: 81
                         y: 244
                         width: 167
                         height: 34
-                        onClicked: classA.newGameWindow()
-                        text: "New Game"
+                        onClicked: classA.registerWindow()
+                        text: "Register"
                         background: Rectangle {
                                color: "transparent"
                         }
 
 
                         contentItem: Text {
-                               text: new_Game.text
-                               color: new_Game.hovered ? "#a9caf9" : "#ffffff"
+                               text: register.text
+                               color: register.hovered ? "#a9caf9" : "#ffffff"
                                font.family: "Inria Serif"
                                font.pixelSize: 26
                                horizontalAlignment: Text.AlignLeft

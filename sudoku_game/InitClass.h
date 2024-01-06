@@ -13,7 +13,8 @@ signals:
 
 public slots:
     void howToPlayWindow();
-    void newGameWindow();
+    void registerWindow();
+    void mainMenu();
 
 private:
      QQmlApplicationEngine *engine;
