@@ -27,7 +27,6 @@ Game::Game(int argc, char *argv[]) : QGuiApplication(argc, argv),
     rootContext->setContextProperty("classA", &objectClass);
     rootContext->setContextProperty("classB", mp3Player);
 
-
 }
 
 Game::~Game()

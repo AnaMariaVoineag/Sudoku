@@ -10,33 +10,32 @@ Window {
     title: qsTr("Register")
 
     Item {
-        width: parent.width
-        height: parent.height
+            width: parent.width
+            height: parent.height
 
 
-        Image {
-            id: register_bg
-            source: "qrc:/UI/assets/register_bg.png"
-            anchors.fill: parent
+            Image {
+                id: register_bg
+                source: "qrc:/UI/assets/register_bg.png"
+                anchors.fill: parent
 
-        }
+            }
 
-        Image {
-            id: arrow
-            opacity: 0.5
-            source: "qrc:/UI/assets/arrow.png"
-            anchors.left: parent.left
-            anchors.top: parent.top
-            anchors.leftMargin: 50
-            anchors.topMargin: 38
-            width: 75
-            height: 110
+            Image {
+                id: arrow
+                opacity: 0.5
+                source: "qrc:/UI/assets/arrow.png"
+                anchors.left: parent.left
+                anchors.top: parent.top
+                anchors.leftMargin: 45
+                anchors.topMargin: 30
+                width: 75
+                height: 110
 
-            MouseArea {
-                    anchors.fill: parent
-                    onClicked: classA.mainMenu()
+                MouseArea {
+                        anchors.fill: parent
+                        onClicked: classA.mainMenu()
+                }
             }
         }
-
-     }
 }

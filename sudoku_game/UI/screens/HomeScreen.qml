@@ -226,14 +226,19 @@ Item {
                         id: register
                         x: 81
                         y: 244
+
                         width: 167
                         height: 34
-                        onClicked: classA.registerWindow()
+                        onClicked: {
+                            classA.registerWindow()
+                            Window.window.close()
+                        }
+
                         text: "Register"
                         background: Rectangle {
                                color: "transparent"
-                        }
 
+                        }
 
                         contentItem: Text {
                                text: register.text

@@ -4,14 +4,14 @@
         <file>UI/screens/HowToPlayWindow.qml</file>
         <file>UI/screens/Register.qml</file>
         <file>UI/assets/icon.png</file>
-        <file>UI/screens/vj_photo.png</file>
-        <file>UI/screens/dwigt_photo.png</file>
         <file>main.qml</file>
         <file>UI/assets/component.png</file>
         <file>UI/assets/mainMenuScreen.png</file>
         <file>UI/assets/scores_leaderboard.png</file>
         <file>UI/assets/register_bg.png</file>
         <file>UI/assets/arrow.png</file>
+        <file>UI/assets/dwight_photo.png</file>
+        <file>UI/assets/vj_photo.png</file>
     </qresource>
     <qresource prefix="/sounds">
         <file>DJPlay.mp3</file>

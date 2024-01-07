@@ -9,6 +9,8 @@ Window {
     title: qsTr("Instructions")
 
     Item {
+        x: 0
+        y: 0
         width: parent.width
         height: parent.height
 
@@ -31,9 +33,9 @@ Window {
                     top: parent.top
                     bottom: parent.bottom
                     leftMargin: 85
-                    rightMargin: 862
-                    topMargin: 108
-                    bottomMargin: 609
+                    rightMargin: 856
+                    topMargin: 96
+                    bottomMargin: 621
                 }
                 font.letterSpacing: 0.313
                 font.pixelSize: 22
@@ -56,10 +58,10 @@ Window {
                     right: parent.right
                     top: parent.top
                     bottom: parent.bottom
-                    leftMargin: 85
-                    rightMargin: 1116
-                    topMargin: 57
-                    bottomMargin: 975
+                    leftMargin: 88
+                    rightMargin: 1113
+                    topMargin: 52
+                    bottomMargin: 980
                 }
 
                 font.letterSpacing: 31
@@ -70,21 +72,51 @@ Window {
                 font.weight: Font.Normal
                 font.family: "Times New Roman"
             }
-            
-            Image {
+
+
                 Image {
                     id: vj_photo
-                    x: 854
-                    y: -7
-                    width: 724
+                    x: 849
+                    y: 17
+                    width: 709
                     height: 962
-                    source: "vj_photo.png"
+                    source: "qrc:/UI/assets/vj_photo.png"
                     fillMode: Image.Stretch
                 }
-            }
 
 
-        }
+
+                Rectangle {
+                     id: rectangle_purple
+                     x: 85
+                     y: 484
+                     width: 779
+                     height: 260
+                     opacity: 0.4
+                     visible: true
+                     color: "#000000"
+                }
+
+                Image {
+                    id: dwight_photo
+                    x: 180
+                    y: 404
+                    width: 1451
+                    height: 629
+                    source: "qrc:/UI/assets/dwight_photo.png"
+                    fillMode: Image.PreserveAspectFit
+                }
+
+                Text {
+                    id: quote
+                    x: 59
+                    y: 529
+                    color: "#ffffff"
+                    text: qsTr("You have to learn the rules of the game. And then\nyou have to play better than anyone else.\n-Albert Einstein")
+                    font.pixelSize: 38
+                    scale: 0.8
+                }
+       }
 
     }
 }
