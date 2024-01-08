@@ -35,12 +35,25 @@
       <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
       <Extensions>cpp;c;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
     </Filter>
+    <Filter Include="Distribution Files">
+      <UniqueIdentifier>{B83CAF91-C7BF-462F-B76C-EA11631F866C}</UniqueIdentifier>
+      <Extensions>*</Extensions>
+      <ParseFiles>false</ParseFiles>
+    </Filter>
+    <Filter Include="Distribution Files">
+      <UniqueIdentifier>{B83CAF91-C7BF-462F-B76C-EA11631F866C}</UniqueIdentifier>
+      <Extensions>*</Extensions>
+      <ParseFiles>false</ParseFiles>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Game.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="initClass.cpp">
+    <ClCompile Include="InitClass.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Music.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="main.cpp">
@@ -51,7 +64,10 @@
     <QtMoc Include="Game.h">
       <Filter>Header Files</Filter>
     </QtMoc>
-    <QtMoc Include="initClass.h">
+    <QtMoc Include="InitClass.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="Music.h">
       <Filter>Header Files</Filter>
     </QtMoc>
   </ItemGroup>
@@ -64,16 +80,67 @@
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
+    <None Include="UI\screens\AppStyle.qml">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="DJPlay.mp3">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="UI\screens\DropDownMenu.qml">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="UI\fonts\Font Awesome 5 Brands-Regular-400.otf">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="UI\fonts\Font Awesome 5 Free-Regular-400.otf">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="UI\fonts\Font Awesome 5 Free-Solid-900.otf">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="UI\fonts\Font Awesome 5 Pro-Light-300.otf">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="UI\fonts\Font Awesome 5 Pro-Regular-400.otf">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="UI\fonts\Font Awesome 5 Pro-Solid-900.otf">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="UI\screens\FontStyle.qml">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="UI\screens\Game.qml">
+      <Filter>Resource Files</Filter>
+    </None>
     <None Include="UI\screens\HomeScreen.qml">
       <Filter>Resource Files</Filter>
     </None>
     <None Include="UI\screens\HowToPlayWindow.qml">
       <Filter>Resource Files</Filter>
     </None>
-    <None Include="UI\screens\NewGame.qml">
+    <None Include="UI\fonts\Nunito-Bold.ttf">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="UI\fonts\Nunito-Light.ttf">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="UI\fonts\Nunito-Medium.ttf">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="UI\fonts\Nunito-Regular.ttf">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="UI\screens\Register.qml">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="UI\assets\arrow.png">
       <Filter>Resource Files</Filter>
     </None>
     <None Include="UI\assets\component.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="UI\assets\dwight_photo.png">
       <Filter>Resource Files</Filter>
     </None>
     <None Include="UI\assets\icon.png">
@@ -85,20 +152,49 @@
     <None Include="UI\assets\mainMenuScreen.png">
       <Filter>Resource Files</Filter>
     </None>
-    <None Include="UI\assets\pLAY1.png">
-      <Filter>Resource Files</Filter>
-    </None>
     <QtRcc Include="qml.qrc">
       <Filter>Resource Files</Filter>
     </QtRcc>
+    <None Include="UI\screens\qtquickcontrols2.conf">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="UI\assets\register_bg.png">
+      <Filter>Resource Files</Filter>
+    </None>
     <None Include="UI\assets\scores_leaderboard.png">
       <Filter>Resource Files</Filter>
     </None>
-    <None Include="UI\assets\vj_photo_1.png">
+    <None Include="UI\assets\vj_photo.png">
       <Filter>Resource Files</Filter>
     </None>
-    <None Include="UI\screens\vj_photo_1.png">
-      <Filter>Resource Files</Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="5">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Awesome">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Brands-Regular-400.otf">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="UI\fonts\Font">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Free-Regular-400.otf">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Free-Solid-900.otf">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Pro-Light-300.otf">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Pro-Regular-400.otf">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Pro-Solid-900.otf">
+      <Filter>Distribution Files</Filter>
     </None>
   </ItemGroup>
 </Project>

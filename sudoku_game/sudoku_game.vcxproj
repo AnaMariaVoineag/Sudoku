@@ -41,11 +41,11 @@
   <Import Project="$(QtMsBuild)\qt_defaults.props" Condition="Exists('$(QtMsBuild)\qt_defaults.props')" />
   <PropertyGroup Label="QtSettings" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <QtInstall>6.5.3_msvc2019_64</QtInstall>
-    <QtModules>core;opengl;network;gui;qml;quick</QtModules>
+    <QtModules>core;opengl;network;gui;multimedia;qml;quick</QtModules>
   </PropertyGroup>
   <PropertyGroup Label="QtSettings" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <QtInstall>6.5.3_msvc2019_64</QtInstall>
-    <QtModules>core;opengl;network;gui;qml;quick</QtModules>
+    <QtModules>core;opengl;network;gui;multimedia;qml;quick</QtModules>
   </PropertyGroup>
   <Target Name="QtMsBuildNotFound" BeforeTargets="CustomBuild;ClCompile" Condition="!Exists('$(QtMsBuild)\qt.targets') OR !Exists('$(QtMsBuild)\Qt.props')">
     <Message Importance="High" Text="QtMsBuild: could not locate qt.targets, qt.props; project may not build correctly." />
@@ -193,12 +193,14 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Game.cpp" />
-    <ClCompile Include="initClass.cpp" />
+    <ClCompile Include="InitClass.cpp" />
+    <ClCompile Include="Music.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="Game.h" />
-    <QtMoc Include="initClass.h" />
+    <QtMoc Include="InitClass.h" />
+    <QtMoc Include="Music.h" />
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="debug\moc_predefs.h.cbt">
@@ -219,18 +221,46 @@
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
+    <None Include="UI\screens\AppStyle.qml" />
+    <None Include="DJPlay.mp3" />
+    <None Include="UI\screens\DropDownMenu.qml" />
+    <None Include="UI\fonts\Font Awesome 5 Brands-Regular-400.otf" />
+    <None Include="UI\fonts\Font Awesome 5 Free-Regular-400.otf" />
+    <None Include="UI\fonts\Font Awesome 5 Free-Solid-900.otf" />
+    <None Include="UI\fonts\Font Awesome 5 Pro-Light-300.otf" />
+    <None Include="UI\fonts\Font Awesome 5 Pro-Regular-400.otf" />
+    <None Include="UI\fonts\Font Awesome 5 Pro-Solid-900.otf" />
+    <None Include="UI\screens\FontStyle.qml" />
+    <None Include="UI\screens\Game.qml" />
     <None Include="UI\screens\HomeScreen.qml" />
     <None Include="UI\screens\HowToPlayWindow.qml" />
-    <None Include="UI\screens\NewGame.qml" />
+    <None Include="UI\fonts\Nunito-Bold.ttf" />
+    <None Include="UI\fonts\Nunito-Light.ttf" />
+    <None Include="UI\fonts\Nunito-Medium.ttf" />
+    <None Include="UI\fonts\Nunito-Regular.ttf" />
+    <None Include="UI\screens\Register.qml" />
+    <None Include="UI\assets\arrow.png" />
     <None Include="UI\assets\component.png" />
+    <None Include="UI\assets\dwight_photo.png" />
     <None Include="UI\assets\icon.png" />
     <None Include="main.qml" />
     <None Include="UI\assets\mainMenuScreen.png" />
-    <None Include="UI\assets\pLAY1.png" />
     <QtRcc Include="qml.qrc" />
+    <None Include="UI\screens\qtquickcontrols2.conf" />
+    <None Include="UI\assets\register_bg.png" />
     <None Include="UI\assets\scores_leaderboard.png" />
-    <None Include="UI\assets\vj_photo_1.png" />
-    <None Include="UI\screens\vj_photo_1.png" />
+    <None Include="UI\assets\vj_photo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="5" />
+    <None Include="Awesome" />
+    <None Include="Brands-Regular-400.otf" />
+    <None Include="UI\fonts\Font" />
+    <None Include="Free-Regular-400.otf" />
+    <None Include="Free-Solid-900.otf" />
+    <None Include="Pro-Light-300.otf" />
+    <None Include="Pro-Regular-400.otf" />
+    <None Include="Pro-Solid-900.otf" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <Import Project="$(QtMsBuild)\qt.targets" Condition="Exists('$(QtMsBuild)\qt.targets')" />
