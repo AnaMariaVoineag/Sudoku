@@ -28,3 +28,11 @@ HEADERS += \
     Game.h \
     InitClass.h \
     Music.h
+
+DISTFILES += \
+    UI/fonts/Font Awesome 5 Brands-Regular-400.otf \
+    UI/fonts/Font Awesome 5 Free-Regular-400.otf \
+    UI/fonts/Font Awesome 5 Free-Solid-900.otf \
+    UI/fonts/Font Awesome 5 Pro-Light-300.otf \
+    UI/fonts/Font Awesome 5 Pro-Regular-400.otf \
+    UI/fonts/Font Awesome 5 Pro-Solid-900.otf

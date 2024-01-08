@@ -15,6 +15,7 @@ public slots:
     void howToPlayWindow();
     void registerWindow();
     void mainMenu();
+    void gameWindow();
 
 private:
      QQmlApplicationEngine *engine;

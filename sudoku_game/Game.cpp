@@ -3,12 +3,16 @@
 #include <QIcon>
 #include <QQmlContext>
 
+
 Game::Game(int argc, char *argv[]) : QGuiApplication(argc, argv),
     engine(new QQmlApplicationEngine), objectClass(engine)
 {
     setWindowIcon(QIcon(":/UI/assets/icon.png"));
 
     Music *mp3Player = new Music();
+
+    qmlRegisterSingletonType(QStringLiteral("qrc:/UI/screens/AppStyle.qml"),"AppStyle",1,0,"AppStyle");
+    qmlRegisterSingletonType(QUrl(QStringLiteral("qrc:/UI/screens/FontStyle.qml")),"AppStyle",1,0,"FontStyle");
 
     const QUrl url(u"qrc:/main.qml"_qs);
     QObject::connect(

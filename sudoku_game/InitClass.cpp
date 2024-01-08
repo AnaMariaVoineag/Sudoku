@@ -49,7 +49,18 @@ void InitClass::mainMenu()
 }
 
 
+void InitClass::gameWindow()
+{
+    QQmlComponent component(this->engine);
+    component.loadUrl(QUrl(QStringLiteral("qrc:/UI/screens/Game.qml")));
 
+    if(component.isReady())
+    {
+        component.create();
+    } else {
+        std::cout << "Error loading window: " << component.errorString().toStdString() << std::endl;
+    }
+}
 
 
 

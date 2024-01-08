@@ -4,14 +4,29 @@
         <file>UI/screens/HowToPlayWindow.qml</file>
         <file>UI/screens/Register.qml</file>
         <file>UI/assets/icon.png</file>
-        <file>main.qml</file>
         <file>UI/assets/component.png</file>
         <file>UI/assets/mainMenuScreen.png</file>
         <file>UI/assets/scores_leaderboard.png</file>
-        <file>UI/assets/register_bg.png</file>
         <file>UI/assets/arrow.png</file>
         <file>UI/assets/dwight_photo.png</file>
         <file>UI/assets/vj_photo.png</file>
+        <file>UI/screens/DropDownMenu.qml</file>
+        <file>UI/screens/AppStyle.qml</file>
+        <file>UI/screens/qtquickcontrols2.conf</file>
+        <file>UI/screens/FontStyle.qml</file>
+        <file>UI/fonts/Font Awesome 5 Brands-Regular-400.otf</file>
+        <file>UI/fonts/Font Awesome 5 Free-Regular-400.otf</file>
+        <file>UI/fonts/Font Awesome 5 Free-Solid-900.otf</file>
+        <file>UI/fonts/Font Awesome 5 Pro-Light-300.otf</file>
+        <file>UI/fonts/Font Awesome 5 Pro-Regular-400.otf</file>
+        <file>UI/fonts/Font Awesome 5 Pro-Solid-900.otf</file>
+        <file>UI/fonts/Nunito-Bold.ttf</file>
+        <file>UI/fonts/Nunito-Light.ttf</file>
+        <file>UI/fonts/Nunito-Medium.ttf</file>
+        <file>UI/fonts/Nunito-Regular.ttf</file>
+        <file>main.qml</file>
+        <file>UI/screens/Game.qml</file>
+        <file>UI/assets/register_bg.png</file>
     </qresource>
     <qresource prefix="/sounds">
         <file>DJPlay.mp3</file>
