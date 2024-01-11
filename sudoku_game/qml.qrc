@@ -27,8 +27,7 @@
         <file>main.qml</file>
         <file>UI/screens/Game.qml</file>
         <file>UI/assets/register_bg.png</file>
+        <file>music/Timeless.mp3</file>
     </qresource>
-    <qresource prefix="/sounds">
-        <file>DJPlay.mp3</file>
-    </qresource>
+    <qresource prefix="/sounds"/>
 </RCC>

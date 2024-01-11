@@ -12,7 +12,7 @@ Game::Game(int argc, char *argv[]) : QGuiApplication(argc, argv),
     Music *mp3Player = new Music();
 
     qmlRegisterSingletonType(QStringLiteral("qrc:/UI/screens/AppStyle.qml"),"AppStyle",1,0,"AppStyle");
-    qmlRegisterSingletonType(QUrl(QStringLiteral("qrc:/UI/screens/FontStyle.qml")),"AppStyle",1,0,"FontStyle");
+    qmlRegisterSingletonType(QStringLiteral("qrc:/UI/screens/FontStyle.qml"),"AppStyle",1,0,"FontStyle");
 
     const QUrl url(u"qrc:/main.qml"_qs);
     QObject::connect(

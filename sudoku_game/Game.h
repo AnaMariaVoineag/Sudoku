@@ -11,7 +11,7 @@ class Game : public QGuiApplication
 signals:
 
 
-public:
+public slots:
     Game(int argc, char *argv[]);
     ~Game();
     int run();

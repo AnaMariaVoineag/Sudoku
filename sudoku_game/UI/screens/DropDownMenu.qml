@@ -4,6 +4,7 @@ import QtQuick.Layouts
 import AppStyle 1.0
 import QtQuick.Controls.Basic 6.0
 
+
 ComboBox {
     id: root
     model: ["Very Easy", "Easy", "Medium", "Difficult", "May God have mercy"]
