@@ -85,7 +85,6 @@ Window {
                 }
 
 
-
                 Rectangle {
                      id: rectangle_purple
                      x: 85

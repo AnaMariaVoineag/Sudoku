@@ -2,7 +2,6 @@ pragma Singleton
 import QtQuick 2.9
 import QtQuick.Controls 2.5
 
-
 QtObject {
     readonly property int       h1 : 32
     readonly property int       h2 : 24

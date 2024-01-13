@@ -8,6 +8,7 @@ QT += quick \
 
 SOURCES += \
     Game.cpp \
+    Grid.cpp \
     InitClass.cpp \
     Music.cpp \
     main.cpp
@@ -27,6 +28,7 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 HEADERS += \
     Game.h \
+    Grid.h \
     InitClass.h \
     Music.h
 

@@ -1,4 +1,5 @@
 #include "Game.h"
+#include "Grid.h"
 #include "Music.h"
 #include <QIcon>
 #include <QQmlContext>
@@ -13,6 +14,8 @@ Game::Game(int argc, char *argv[]) : QGuiApplication(argc, argv),
 
     qmlRegisterSingletonType(QStringLiteral("qrc:/UI/screens/AppStyle.qml"),"AppStyle",1,0,"AppStyle");
     qmlRegisterSingletonType(QStringLiteral("qrc:/UI/screens/FontStyle.qml"),"AppStyle",1,0,"FontStyle");
+
+    qmlRegisterType<Grid>("SudokuGrid", 1, 0, "SudokuGrid");
 
     const QUrl url(u"qrc:/main.qml"_qs);
     QObject::connect(
@@ -30,6 +33,8 @@ Game::Game(int argc, char *argv[]) : QGuiApplication(argc, argv),
 
     rootContext->setContextProperty("classA", &objectClass);
     rootContext->setContextProperty("classB", mp3Player);
+
+
 
 }
 
