@@ -40,11 +40,8 @@ Window {
                            DropDownMenu{
                                id: selectionCombo
                                model: ["Very Easy", "Easy", "Medium", "Difficult", "May God have mercy"]
-
                            }
-
                        }
-
                    }
 
                 Button {
@@ -56,7 +53,6 @@ Window {
                          onClicked: {
                              if(qsTr(selectionCombo.currentText)==="Very Easy"){
                                  classA.gameWindow();
-
                              }
                          }
                          text: qsTr(" NEXT ")
@@ -70,15 +66,13 @@ Window {
 
                          contentItem: Text {
                                 text: btn1.text
-                                color: btn1.hovered ? "#ea74de" : "#ffffff"
+                                color: btn1.hovered ? "#ccccb3" : "#ffffff"
                                 font.family: "Inria Serif"
                                 font.pixelSize: 30
                                 horizontalAlignment: Text.AlignLeft
                                 verticalAlignment: Text.AlignTop
                                 wrapMode: Text.Wrap
                                 font.weight: Font.Normal
-
-
                             }
 
                         }
@@ -97,12 +91,9 @@ Window {
                 height: 110
 
                 MouseArea {
-                        anchors.fill: parent
-                        onClicked: classA.mainMenu()
+                    anchors.fill: parent
+                    onClicked: classA.mainMenu()
                 }
             }
-
-
-
         }
 }
