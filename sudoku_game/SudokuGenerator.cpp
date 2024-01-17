@@ -37,7 +37,7 @@ SudokuGenerator::SudokuGenerator(int m[9][9])
 SudokuGenerator::~SudokuGenerator() {}
 
 int** SudokuGenerator::get_matrice() {
-	int** m = new int[9];
+	int** m = new int*[9];
 	for (int i = 0; i < 9; i++)
 	{
 		m[i] = new int[9]
