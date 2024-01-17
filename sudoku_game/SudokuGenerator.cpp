@@ -151,7 +151,7 @@ void SudokuGenerator::goleste_cel() {
 
 	}
 }
-void SudokuGenerator::scrieSolutie() {
+void SudokuGenerator::scrie_solutie() {
 	std::ofstream scrieF("SolutieSudoku.txt");
 	//scrieF.open(numeFis);
 	for (int i = 0; i < 9; i++)
