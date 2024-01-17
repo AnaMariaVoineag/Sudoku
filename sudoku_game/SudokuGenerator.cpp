@@ -151,15 +151,33 @@ void SudokuGenerator::goleste_cel() {
 
 	}
 }
-void SudokuGenerator::scrie(int m[9][9], char numeFis[15]) {
-	std::ofstream scrieF;
-	scrieF.open(numeFis);
+void SudokuGenerator::scrieSolutie() {
+	std::ofstream scrieF("SolutieSudoku.txt");
+	//scrieF.open(numeFis);
 	for (int i = 0; i < 9; i++)
 	{
 		for (int j = 0; j < 9; j++)
-			scrieF << m[i][j];
+			scrieF << matrsol[i][j];
 		scrieF << "\n";
 	}
-		
-
+}
+void SudokuGenerator::scrie_initial() {
+	std::ofstream scrieF("SudokuInitial.txt");
+	//scrieF.open(numeFis);
+	for (int i = 0; i < 9; i++)
+	{
+		for (int j = 0; j < 9; j++)
+			scrieF << matr[i][j];
+		scrieF << "\n";
+	}
+}
+void SudokuGenerator::scrieCurent() {
+	std::ofstream scrieF("SudokuCurent.txt");
+	//scrieF.open(numeFis);
+	for (int i = 0; i < 9; i++)
+	{
+		for (int j = 0; j < 9; j++)
+			scrieF << matr[i][j];
+		scrieF << "\n";
+	}
 }
