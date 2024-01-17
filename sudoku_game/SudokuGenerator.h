@@ -22,7 +22,7 @@ public:
 	void umplu();
 	void umplu_solutie();
 	void scrie_initial();
-	
+	void scrie_curent();
 
 };
 
