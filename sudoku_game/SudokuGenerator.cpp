@@ -129,7 +129,7 @@ void SudokuGenerator::umplu_solutie() {
 void SudokuGenerator::goleste_cel() {
 	int nr = 0;
 	int l;
-	while (nr < niv_dif)
+	while (nr < nr_zero)
 	{
 		l = rand() % 81 - 1;
 		int i = l / 9;
@@ -139,21 +139,5 @@ void SudokuGenerator::goleste_cel() {
 			matr[i][j] = 0;
 		}
 
-	}
-}
-void SudokuGenerator::afis_matr() {
-	for (int i = 0; i < 9; i++)
-	{
-		for (int j = 0; j < 9; j++)
-			std::cout << matr[i][j] << " ";
-		std::cout << '\n';
-	}
-}
-void SudokuGenerator::afis_matrsol() {
-	for (int i = 0; i < 9; i++)
-	{
-		for (int j = 0; j < 9; j++)
-			std::cout << matrsol[i][j] << " ";
-		std::cout << '\n';
 	}
 }
