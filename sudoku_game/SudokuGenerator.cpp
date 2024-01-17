@@ -171,13 +171,3 @@ void SudokuGenerator::scrie_initial() {
 		scrieF << "\n";
 	}
 }
-void SudokuGenerator::scrie_curent() {
-	std::ofstream scrieF("SudokuCurent.txt");
-	//scrieF.open(numeFis);
-	for (int i = 0; i < 9; i++)
-	{
-		for (int j = 0; j < 9; j++)
-			scrieF << matr[i][j];
-		scrieF << "\n";
-	}
-}
