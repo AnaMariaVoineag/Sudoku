@@ -5,6 +5,14 @@ VisualStudioVersion = 17.8.34322.80
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "sudoku_game", "sudoku_game.vcxproj", "{C980B588-9D0D-3D3D-8B4C-876AB9F9211D}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{7D8217FF-9478-4CA4-84D3-807A45EE3BAA}"
+	ProjectSection(SolutionItems) = preProject
+		fisTemp.txt = fisTemp.txt
+		SolutieSudoku.txt = SolutieSudoku.txt
+		SudokuCurent.txt = SudokuCurent.txt
+		SudokuInitial.txt = SudokuInitial.txt
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64

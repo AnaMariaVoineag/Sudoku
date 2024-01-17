@@ -199,6 +199,7 @@
     <ClCompile Include="Music.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="SudokuGenerator.cpp" />
+    <ClCompile Include="TempMain.cpp" />
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="Game.h" />
