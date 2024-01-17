@@ -1,5 +1,6 @@
 #include "SudokuGenerator.h"
 #include <iostream>
+#include <fstream>
 SudokuGenerator::SudokuGenerator(int n) {
 	niv_dif = n;
 	for (int i = 0; i < 9; i++)
@@ -140,4 +141,16 @@ void SudokuGenerator::goleste_cel() {
 		}
 
 	}
+}
+void SudokuGenerator::scrie(int m[9][9], string numeFis) {
+	ofstream scrieF;
+	scrieF.open(numeFis);
+	for (int i = 0; i < 9; i++)
+	{
+		for (int j = 0; j < 9; j++)
+			scrieF << m[i][j];
+		scrieF << "\n";
+	}
+		
+
 }

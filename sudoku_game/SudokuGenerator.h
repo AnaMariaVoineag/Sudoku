@@ -21,8 +21,7 @@ public:
 	void goleste_cel();
 	void umplu();
 	void umplu_solutie();
-	void afis_matr();
-	void afis_matrsol();
+	void scrie();
 
 };
 
