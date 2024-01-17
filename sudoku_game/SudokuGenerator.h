@@ -7,7 +7,8 @@ private:
 	int niv_dif;
 	int nr_zero;
 public:
-	SudokuGenerator();
+	SudokuGenerator(int n);
+	SudokuGenerator(int m[9][9]);
 	~SudokuGenerator();
 	void alegere();
 	bool verif_patrat(int l, int c, int nr);

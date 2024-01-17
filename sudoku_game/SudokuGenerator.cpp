@@ -10,42 +10,29 @@ SudokuGenerator::SudokuGenerator(int n) {
 		}
 
 }
-//SudokuGenerator::SudokuGenerator(Int)
+SudokuGenerator::SudokuGenerator(int m[9][9])
+{
+	for (int i = 0; i < 9; i++)
+		for (int j = 0; j < 9; j++)
+			matr[i][j] = m[i][j];
+}
 SudokuGenerator::~SudokuGenerator() {}
 void SudokuGenerator::alegere() {
-	std::cout << "Select difficulty: \n";
-	std::cout << "1) Very Easy \n";
-	std::cout << "2) Easy \n";
-	std::cout << "3) Medium \n";
-	std::cout << "4) Difficult \n";
-	std::cout << "5) May God have mercy \n";
-	int c;
-	std::cin >> c;
-	switch (c) {
+	switch (niv_dif) {
 	case 1:
-		niv_dif = 34;
-		std::cout << "You have chosen: Very Easy \n";
-		std::cout << "Good Luck! \n";
+		nr_zero = 34;
 		break;
 	case 2:
-		niv_dif = 45;
-		std::cout << "You have chosen: Easy \n";
-		std::cout << "Good Luck!\n";
+		nr = 45;
 		break;
 	case 3:
-		niv_dif = 49;
-		std::cout << "You have chosen: Medium\n";
-		std::cout << "Good Luck!\n";
+		nr_zero = 49;
 		break;
 	case 4:
-		niv_dif = 53;
-		std::cout << "You have chosen: Difficult\n";
-		std::cout << "Good Luck!\n";
+		nr_zero = 53;
 		break;
 	case 5:
-		niv_dif = 64;
-		std::cout << "You have chosen: May God have mercy\n";
-		std::cout << "Good Luck!\n";
+		nr_zero = 64
 		break;
 	}
 }
