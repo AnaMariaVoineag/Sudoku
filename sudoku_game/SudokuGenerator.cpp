@@ -9,21 +9,6 @@ SudokuGenerator::SudokuGenerator(int n) {
 			matr[i][j] = 0;
 			matrsol[i][j] = 0;
 		}
-
-}
-SudokuGenerator::SudokuGenerator(int m[9][9])
-{
-	for (int i = 0; i < 9; i++)
-		for (int j = 0; j < 9; j++)
-			matr[i][j] = m[i][j];
-}
-
-SudokuGenerator::~SudokuGenerator() {}
-
-int** SudokuGenerator::get_matrice() {
-	return matr;
-}
-void SudokuGenerator::alegere() {
 	switch (niv_dif) {
 	case 1:
 		nr_zero = 34;
@@ -41,6 +26,19 @@ void SudokuGenerator::alegere() {
 		nr_zero = 64;
 		break;
 	}
+
+}
+SudokuGenerator::SudokuGenerator(int m[9][9])
+{
+	for (int i = 0; i < 9; i++)
+		for (int j = 0; j < 9; j++)
+			matr[i][j] = m[i][j];
+}
+
+SudokuGenerator::~SudokuGenerator() {}
+
+int** SudokuGenerator::get_matrice() {
+	return matr;
 }
 bool SudokuGenerator::verif_patrat(int l, int c, int nr) {
 	for (int i = 0; i < 3; i++) {

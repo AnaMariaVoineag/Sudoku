@@ -10,7 +10,6 @@ public:
 	SudokuGenerator(int n);
 	SudokuGenerator(int m[9][9]);
 	~SudokuGenerator();
-	void alegere();
 	int** get_matrice();
 	bool verif_patrat(int l, int c, int nr);
 	bool verif_lin(int i, int nr);
