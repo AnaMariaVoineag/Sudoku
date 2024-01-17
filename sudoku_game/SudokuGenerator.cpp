@@ -17,7 +17,12 @@ SudokuGenerator::SudokuGenerator(int m[9][9])
 		for (int j = 0; j < 9; j++)
 			matr[i][j] = m[i][j];
 }
+
 SudokuGenerator::~SudokuGenerator() {}
+
+int** SudokuGenerator::get_matrice() {
+	return matr;
+}
 void SudokuGenerator::alegere() {
 	switch (niv_dif) {
 	case 1:
