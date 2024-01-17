@@ -24,7 +24,7 @@ void SudokuGenerator::alegere() {
 		nr_zero = 34;
 		break;
 	case 2:
-		nr = 45;
+		nr_zero = 45;
 		break;
 	case 3:
 		nr_zero = 49;
@@ -33,7 +33,7 @@ void SudokuGenerator::alegere() {
 		nr_zero = 53;
 		break;
 	case 5:
-		nr_zero = 64
+		nr_zero = 64;
 		break;
 	}
 }
@@ -142,8 +142,8 @@ void SudokuGenerator::goleste_cel() {
 
 	}
 }
-void SudokuGenerator::scrie(int m[9][9], string numeFis) {
-	ofstream scrieF;
+void SudokuGenerator::scrie(int m[9][9], char numeFis[15]) {
+	std::ofstream scrieF;
 	scrieF.open(numeFis);
 	for (int i = 0; i < 9; i++)
 	{

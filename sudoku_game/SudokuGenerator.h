@@ -21,7 +21,7 @@ public:
 	void goleste_cel();
 	void umplu();
 	void umplu_solutie();
-	void scrie();
+	void scrie(int m[9][9],char str[15]);
 
 };
 
