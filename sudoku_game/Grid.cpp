@@ -40,10 +40,17 @@ bool Grid::setData(const QModelIndex &index, const QVariant &value, int role)
         if (!checkIndex(index))
             return false;
 
-        if (value.toInt() == 0 && gridData[index.row()][index.column()] != 0)
+        int inputValue = value.toInt();
+
+
+        if (inputValue < 1 || inputValue > 9)
             return false;
 
-        gridData[index.row()][index.column()] = value.toInt();
+
+        if (inputValue == 0 && gridData[index.row()][index.column()] != 0)
+            return false;
+
+        gridData[index.row()][index.column()] = inputValue;
 
         emit dataChanged(index, index);
 
@@ -51,6 +58,7 @@ bool Grid::setData(const QModelIndex &index, const QVariant &value, int role)
     }
     return false;
 }
+
 
 Qt::ItemFlags Grid::flags(const QModelIndex &index) const
 {

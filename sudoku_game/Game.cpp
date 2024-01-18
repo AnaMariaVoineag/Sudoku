@@ -16,6 +16,7 @@ Game::Game(int argc, char *argv[]) : QGuiApplication(argc, argv),
 
     qmlRegisterType<Grid>("SudokuGrid", 1, 0, "SudokuGrid");
 
+
     const QUrl url(u"qrc:/main.qml"_qs);
     QObject::connect(
         engine,
@@ -32,6 +33,9 @@ Game::Game(int argc, char *argv[]) : QGuiApplication(argc, argv),
 
     rootContext->setContextProperty("classA", &objectClass);
     rootContext->setContextProperty("classB", mp3Player);
+
+    InitClass initClass(engine);
+    engine->rootContext()->setContextProperty("classC", &initClass);
 
 }
 

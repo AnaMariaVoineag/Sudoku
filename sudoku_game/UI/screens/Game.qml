@@ -69,15 +69,31 @@ Window {
 
                         color: "black"
 
+                        validator: IntValidator {
+                            bottom: 1
+                            top: 9
+                        }
+
                         onEditingFinished: {
                             if (text !== "" && model.display === 0) {
-                                model.text = text
+                                if (validator.validate(text, 0).valid) {
+                                    model.text = text
+                                } else {
+                                    console.warn("Invalid input. Please enter a number from 1 to 9.")
+
+                                }
                             }
                         }
 
                         TableView.onCommit: {
                             if (text !== "" && model.display === 0) {
-                                model.text = text
+                                if (validator.validate(text, 0).valid) {
+                                    model.text = text
+                                } else {
+
+                                    console.warn("Invalid input. Please enter a number from 1 to 9.")
+
+                                }
                             }
                         }
                     }

@@ -1,6 +1,7 @@
 import QtQuick 2.15
 import QtQuick.Controls.Basic 6.0
 
+
 Item {
 
         Image {
@@ -252,26 +253,12 @@ Item {
                         }
                  }
 
-        Text {
-               id: load_game
-               x: 89
-               y: 291
-               width: 125
-               height: 25
-               color: "#ffffff"
-               text: qsTr("Load Game")
-               font.pixelSize: 24
-               horizontalAlignment: Text.AlignLeft
-               verticalAlignment: Text.AlignTop
-               wrapMode: Text.Wrap
-               font.weight: Font.Normal
-               font.family: "Inria Serif"
-        }
+
 
         Button {
             id: btnMusic
             x: 81
-            y: 322
+            y: 290
             width: 86
             height: 33
             property bool isPlaying: false
