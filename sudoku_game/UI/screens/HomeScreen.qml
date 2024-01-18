@@ -223,26 +223,26 @@ Item {
                }
 
                Button {
-                        id: register
+                        id: newGame
                         x: 81
                         y: 244
 
-                        width: 167
+                        width: 147
                         height: 34
                         onClicked: {
-                            classA.registerWindow()
+                            classA.newGameWindow()
                             Window.window.close()
                         }
 
-                        text: "Register"
+                        text: "New Game"
                         background: Rectangle {
                                color: "transparent"
 
                         }
 
                         contentItem: Text {
-                               text: register.text
-                               color: register.hovered ? "#a9caf9" : "#ffffff"
+                               color: newGame.hovered ? "#a9caf9" : "#ffffff"
+                               text: "New Game"
                                font.family: "Inria Serif"
                                font.pixelSize: 26
                                horizontalAlignment: Text.AlignLeft
@@ -256,7 +256,7 @@ Item {
                id: load_game
                x: 89
                y: 291
-               width: 127
+               width: 125
                height: 25
                color: "#ffffff"
                text: qsTr("Load Game")
@@ -272,8 +272,8 @@ Item {
             id: btnMusic
             x: 81
             y: 322
-            width: 207
-            height: 24
+            width: 86
+            height: 33
             property bool isPlaying: false
              onClicked: {
                  isPlaying ? classB.stopMusic() : classB.playMusic();

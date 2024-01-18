@@ -21,10 +21,10 @@ void InitClass::howToPlayWindow()
 
 }
 
-void InitClass:: registerWindow()
+void InitClass:: newGameWindow()
 {
     QQmlComponent component(this->engine);
-    component.loadUrl(QUrl(QStringLiteral("qrc:/UI/screens/Register.qml")));
+    component.loadUrl(QUrl(QStringLiteral("qrc:/UI/screens/NewGame.qml")));
 
     if(component.isReady())
     {
@@ -49,7 +49,7 @@ void InitClass::mainMenu()
 }
 
 
-void InitClass::gameWindow()
+void InitClass::gameWindow(int dificulty)
 {
     QQmlComponent component(this->engine);
     component.loadUrl(QUrl(QStringLiteral("qrc:/UI/screens/Game.qml")));

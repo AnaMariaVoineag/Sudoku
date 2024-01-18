@@ -198,7 +198,6 @@
     <ClCompile Include="InitClass.cpp" />
     <ClCompile Include="Music.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="SudokuGenerator.cpp" />
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="Game.h" />
@@ -225,7 +224,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="UI\screens\AppStyle.qml" />
-    <None Include="DJPlay.mp3" />
     <None Include="UI\screens\DropDownMenu.qml" />
     <None Include="UI\fonts\Font Awesome 5 Brands-Regular-400.otf" />
     <None Include="UI\fonts\Font Awesome 5 Free-Regular-400.otf" />
@@ -267,9 +265,6 @@
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="Grid.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="SudokuGenerator.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <Import Project="$(QtMsBuild)\qt.targets" Condition="Exists('$(QtMsBuild)\qt.targets')" />

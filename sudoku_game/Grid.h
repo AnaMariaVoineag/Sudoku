@@ -1,26 +1,28 @@
 #pragma once
 
 #include <QAbstractTableModel>
+#include <QVariant>
 
 class Grid : public QAbstractTableModel
 {
     Q_OBJECT
 
 public:
-    explicit Grid(QObject *parent = nullptr);
+    Grid(QObject *parent = nullptr);
 
-public:
-    int rowCount(const QModelIndex & = QModelIndex()) const override;
+    int rowCount(const QModelIndex &parent = QModelIndex()) const override;
 
-    int columnCount(const QModelIndex & = QModelIndex()) const override;
+    int columnCount(const QModelIndex &parent = QModelIndex()) const override;
 
-    QVariant data(const QModelIndex &index, int role) const override;
+    QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const override;
 
-    QHash<int, QByteArray> roleNames() const override;
+    bool setData(const QModelIndex &index, const QVariant &value, int role = Qt::EditRole) override;
 
-signals:
+    Qt::ItemFlags flags(const QModelIndex &index) const override;
+
+
 
 private:
-    int gridData[9][9];
+    int** gridData;
 
 };

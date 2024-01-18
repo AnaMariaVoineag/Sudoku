@@ -11,6 +11,7 @@ SOURCES += \
     Grid.cpp \
     InitClass.cpp \
     Music.cpp \
+    SudokuGenerator.cpp \
     main.cpp
 
 RESOURCES += qml.qrc
@@ -30,9 +31,13 @@ HEADERS += \
     Game.h \
     Grid.h \
     InitClass.h \
-    Music.h
+    Music.h \
+    SudokuGenerator.h
 
 DISTFILES += \
+    SolutieSudoku.txt \
+    SudokuCurent.txt \
+    SudokuInitial.txt \
     UI/fonts/Font Awesome 5 Brands-Regular-400.otf \
     UI/fonts/Font Awesome 5 Free-Regular-400.otf \
     UI/fonts/Font Awesome 5 Free-Solid-900.otf \

@@ -8,7 +8,6 @@ Window {
     visible: true
     title: qsTr("Main Menu")
 
-
     Loader {
         id: mainLoader
         anchors.fill: parent

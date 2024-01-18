@@ -4,7 +4,6 @@
 #include <QIcon>
 #include <QQmlContext>
 
-
 Game::Game(int argc, char *argv[]) : QGuiApplication(argc, argv),
     engine(new QQmlApplicationEngine), objectClass(engine)
 {
@@ -33,8 +32,6 @@ Game::Game(int argc, char *argv[]) : QGuiApplication(argc, argv),
 
     rootContext->setContextProperty("classA", &objectClass);
     rootContext->setContextProperty("classB", mp3Player);
-
-
 
 }
 

@@ -13,9 +13,9 @@ signals:
 
 public slots:
     void howToPlayWindow();
-    void registerWindow();
+    void newGameWindow();
     void mainMenu();
-    void gameWindow();
+    void gameWindow(int dificulty);
 
 private:
      QQmlApplicationEngine *engine;

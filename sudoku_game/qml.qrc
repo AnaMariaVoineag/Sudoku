@@ -2,7 +2,7 @@
     <qresource prefix="/">
         <file>UI/screens/HomeScreen.qml</file>
         <file>UI/screens/HowToPlayWindow.qml</file>
-        <file>UI/screens/Register.qml</file>
+        <file>UI/screens/NewGame.qml</file>
         <file>UI/assets/icon.png</file>
         <file>UI/assets/component.png</file>
         <file>UI/assets/mainMenuScreen.png</file>
@@ -24,10 +24,10 @@
         <file>UI/fonts/Nunito-Light.ttf</file>
         <file>UI/fonts/Nunito-Medium.ttf</file>
         <file>UI/fonts/Nunito-Regular.ttf</file>
-        <file>main.qml</file>
         <file>UI/screens/Game.qml</file>
-        <file>UI/assets/register_bg.png</file>
+        <file>UI/assets/newGame_bg.png</file>
         <file>music/Timeless.mp3</file>
+        <file>main.qml</file>
     </qresource>
     <qresource prefix="/sounds"/>
 </RCC>
