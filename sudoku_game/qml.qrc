@@ -6,7 +6,6 @@
         <file>UI/assets/icon.png</file>
         <file>UI/assets/component.png</file>
         <file>UI/assets/mainMenuScreen.png</file>
-        <file>UI/assets/scores_leaderboard.png</file>
         <file>UI/assets/arrow.png</file>
         <file>UI/assets/dwight_photo.png</file>
         <file>UI/assets/vj_photo.png</file>
@@ -27,6 +26,7 @@
         <file>UI/screens/Game.qml</file>
         <file>UI/assets/newGame_bg.png</file>
         <file>music/Timeless.mp3</file>
+        <file>SolutieSudoku.txt</file>
         <file>main.qml</file>
     </qresource>
     <qresource prefix="/sounds"/>

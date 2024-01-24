@@ -63,5 +63,3 @@ void InitClass::gameWindow(int dificulty)
 }
 
 
-
-

@@ -21,8 +21,12 @@ public:
     Qt::ItemFlags flags(const QModelIndex &index) const override;
 
 
+public slots:
+    void solveSudoku();
+
 
 private:
     int** gridData;
+    int matrs[9][9];
 
 };

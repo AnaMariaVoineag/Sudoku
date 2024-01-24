@@ -152,7 +152,8 @@ void SudokuGenerator::goleste_cel() {
     }
 }
 void SudokuGenerator::scrie_solutie() {
-    std::ofstream scrieF("SolutieSudoku.txt");
+    std::ofstream scrieF;
+    scrieF.open("SolutieSudoku.txt");
     //scrieF.open(numeFis);
     for (int i = 0; i < 9; i++)
     {
@@ -162,7 +163,8 @@ void SudokuGenerator::scrie_solutie() {
     }
 }
 void SudokuGenerator::scrie_initial() {
-    std::ofstream scrieF("SudokuInitial.txt");
+    std::ofstream scrieF;
+    scrieF.open("SudokuInitial.txt");
     //scrieF.open(numeFis);
     for (int i = 0; i < 9; i++)
     {

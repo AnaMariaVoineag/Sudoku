@@ -4,6 +4,7 @@ import QtQuick.Layouts 1.15
 import QtQuick.Controls.Basic 6.0
 import SudokuGrid 1.0
 
+
 Window {
     visible: true
     width: 1920
@@ -38,6 +39,8 @@ Window {
             }
 
             TableView {
+
+                id: tableView
                 anchors.fill: parent
                 clip: true
 
@@ -49,53 +52,9 @@ Window {
                     required property var model
                     implicitWidth: 50
                     implicitHeight: 50
-
                     border {
                         color: "white"
-                    }
-
-                    TextField {
-                        anchors.fill: parent
-                        text: model.display !== undefined ? model.display.toString() : ""
-
-                        readOnly: model.display !== undefined && model.display !== 0
-
-                        horizontalAlignment: TextInput.AlignHCenter
-                        verticalAlignment: TextInput.AlignVCenter
-
-                        background: Rectangle {
-                            color: model.row % 2 ? "lightpink" : "lightblue"
-                        }
-
-                        color: "black"
-
-                        validator: IntValidator {
-                            bottom: 1
-                            top: 9
-                        }
-
-                        onEditingFinished: {
-                            if (text !== "" && model.display === 0) {
-                                if (validator.validate(text, 0).valid) {
-                                    model.text = text
-                                } else {
-                                    console.warn("Invalid input. Please enter a number from 1 to 9.")
-
-                                }
-                            }
-                        }
-
-                        TableView.onCommit: {
-                            if (text !== "" && model.display === 0) {
-                                if (validator.validate(text, 0).valid) {
-                                    model.text = text
-                                } else {
-
-                                    console.warn("Invalid input. Please enter a number from 1 to 9.")
-
-                                }
-                            }
-                        }
+                        width: 1
                     }
 
                     Rectangle {
@@ -109,8 +68,56 @@ Window {
                         height: 1
                         color: model.row % 3 == 0 ? "black" : "transparent"
                     }
+
+                    color: model.row % 2 ? "lightpink" : "lightblue"
+
+
+                    Text {
+                        anchors.centerIn: parent
+                        text: model.display !== undefined ? model.display.toString() : ""
+                        font.pointSize: 12
+                    }
+
+                    TableView.editDelegate: TextField {
+                        readOnly: model.display !== undefined && model.display !== 0
+                        anchors.fill: parent
+                        text: model.display !== undefined ? model.display.toString() : ""
+                        horizontalAlignment: TextInput.AlignHCenter
+                        verticalAlignment: TextInput.AlignVCenter
+                        Component.onCompleted: selectAll()
+
+                        validator: IntValidator {
+                            bottom: 1
+                            top: 9
+                        }
+
+                        onAccepted: {
+                            tableView.commit()
+                        }
+
+                        TableView.onCommit: {
+                            if (text !== "" && model.display === 0) {
+                                if (validator.validate(text, 0).valid) {
+                                    model.text = text
+                                } else {
+                                    console.warn("Invalid input. Please enter a number from 1 to 9.")
+                                }
+                            }
+                        }
+                    }
+
                 }
             }
         }
     }
+
+    Button {
+        x: 260
+        y: 503
+        text: qsTr("Solve")
+        onClicked: grid.solveSudoku()
+        Layout.fillWidth: true
+
+    }
 }
+
