@@ -41,7 +41,7 @@ int** SudokuGenerator::get_matrice() {
     for (int i = 0; i < 9; i++)
     {
         m[i] = new int[9];
-            for (int j = 0; j < 9; j++)
+        for (int j = 0; j < 9; j++)
             m[i][j] = matr[i][j];
     }
     return m;

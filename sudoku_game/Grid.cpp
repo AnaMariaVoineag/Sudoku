@@ -1,21 +1,15 @@
 #include "Grid.h"
 #include "SudokuGenerator.h"
-#include <fstream>
 
 Grid::Grid(QObject *parent) : QAbstractTableModel(parent) {
     SudokuGenerator sudokuGenerator(1);
     sudokuGenerator.umplu();
-    sudokuGenerator.scrie_solutie();
-    int matrs[9][9];
 
-    std::ifstream citesteSol("qrc:/SolutieSudoku.txt");
-    for(int i=0;i<9;i++)
-    {
-        for(int j=0;j<9;j++)
-            citesteSol>>matrs[i][j];
-    }
     int **initialValues = sudokuGenerator.get_matrice();
     gridData = initialValues;
+
+    sudokuGenerator.scrie_initial();
+
 }
 
 int Grid::rowCount(const QModelIndex &) const {
@@ -55,6 +49,12 @@ bool Grid::setData(const QModelIndex &index, const QVariant &value, int role)
         if (inputValue < 1 || inputValue > 9)
             return false;
 
+
+        for (int i = 0; i < 9; ++i) {
+            if (gridData[index.row()][i] == inputValue || gridData[i][index.column()] == inputValue)
+                return false;
+        }
+
         if (inputValue == 0 && gridData[index.row()][index.column()] != 0)
             return false;
 
@@ -67,6 +67,7 @@ bool Grid::setData(const QModelIndex &index, const QVariant &value, int role)
 
     return false;
 }
+
 
 Qt::ItemFlags Grid::flags(const QModelIndex &index) const
 {
@@ -81,11 +82,27 @@ Qt::ItemFlags Grid::flags(const QModelIndex &index) const
 
 void Grid::solveSudoku()
 {
+    SudokuGenerator sudokuGenerator(1);
+    sudokuGenerator.umplu();
+
+    QVector<QVector<int>> solution(9, QVector<int>(9));
+
+
     for (int i = 0; i < 9; ++i) {
         for (int j = 0; j < 9; ++j) {
-            matrs[i][j] = (i + j) % 9 + 1;
+            if (gridData[i][j] != 0) {
+                solution[i][j] = gridData[i][j];
+            } else {
+                solution[i][j] = sudokuGenerator.get_matrice()[i][j];
+            }
+
             QModelIndex index = createIndex(i, j);
+            gridData[i][j] = solution[i][j];
             emit dataChanged(index, index);
         }
     }
+
+    sudokuGenerator.scrie_solutie();
+
+
 }

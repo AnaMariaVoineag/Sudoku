@@ -3,6 +3,7 @@
 #include <QAbstractTableModel>
 #include <QVariant>
 
+
 class Grid : public QAbstractTableModel
 {
     Q_OBJECT
@@ -20,13 +21,14 @@ public:
 
     Qt::ItemFlags flags(const QModelIndex &index) const override;
 
-
 public slots:
     void solveSudoku();
 
 
 private:
     int** gridData;
+    int **initialValues;
     int matrs[9][9];
+
 
 };

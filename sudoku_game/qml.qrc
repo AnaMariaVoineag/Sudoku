@@ -26,7 +26,6 @@
         <file>UI/screens/Game.qml</file>
         <file>UI/assets/newGame_bg.png</file>
         <file>music/Timeless.mp3</file>
-        <file>SolutieSudoku.txt</file>
         <file>main.qml</file>
     </qresource>
     <qresource prefix="/sounds"/>

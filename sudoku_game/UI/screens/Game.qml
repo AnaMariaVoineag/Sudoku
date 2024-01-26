@@ -39,8 +39,6 @@ Window {
             }
 
             TableView {
-
-                id: tableView
                 anchors.fill: parent
                 clip: true
 
@@ -52,9 +50,54 @@ Window {
                     required property var model
                     implicitWidth: 50
                     implicitHeight: 50
-                    border {
-                        color: "white"
-                        width: 1
+
+                    TextField {
+                        anchors.fill: parent
+                        text: model.display !== undefined ? model.display.toString() : ""
+
+                        readOnly: model.display !== undefined && model.display !== 0
+
+                        horizontalAlignment: TextInput.AlignHCenter
+                        verticalAlignment: TextInput.AlignVCenter
+
+                        background: Rectangle {
+                            color: model.row % 2 ? "lightpink" : "lightblue"
+                            border {
+                                width: 1
+                                color: "white"
+                            }
+
+                        }
+
+                        color: "black"
+
+                        validator: IntValidator {
+                            bottom: 1
+                            top: 9
+                        }
+
+                        onEditingFinished: {
+                            if (text !== "" && model.display === 0) {
+                                if (validator.validate(text, 0).valid) {
+                                    model.text = text
+                                } else {
+                                    console.log("Invalid input. Please enter a number from 1 to 9.")
+
+                                }
+                            }
+                        }
+
+                        TableView.onCommit: {
+                            if (text !== "" && model.display === 0) {
+                                if (validator.validate(text, 0).valid) {
+                                    model.display = text
+                                } else {
+
+                                    console.log("Invalid input. Please enter a number from 1 to 9.")
+
+                                }
+                            }
+                        }
                     }
 
                     Rectangle {
@@ -68,56 +111,18 @@ Window {
                         height: 1
                         color: model.row % 3 == 0 ? "black" : "transparent"
                     }
-
-                    color: model.row % 2 ? "lightpink" : "lightblue"
-
-
-                    Text {
-                        anchors.centerIn: parent
-                        text: model.display !== undefined ? model.display.toString() : ""
-                        font.pointSize: 12
-                    }
-
-                    TableView.editDelegate: TextField {
-                        readOnly: model.display !== undefined && model.display !== 0
-                        anchors.fill: parent
-                        text: model.display !== undefined ? model.display.toString() : ""
-                        horizontalAlignment: TextInput.AlignHCenter
-                        verticalAlignment: TextInput.AlignVCenter
-                        Component.onCompleted: selectAll()
-
-                        validator: IntValidator {
-                            bottom: 1
-                            top: 9
-                        }
-
-                        onAccepted: {
-                            tableView.commit()
-                        }
-
-                        TableView.onCommit: {
-                            if (text !== "" && model.display === 0) {
-                                if (validator.validate(text, 0).valid) {
-                                    model.text = text
-                                } else {
-                                    console.warn("Invalid input. Please enter a number from 1 to 9.")
-                                }
-                            }
-                        }
-                    }
-
                 }
             }
         }
-    }
 
-    Button {
-        x: 260
-        y: 503
-        text: qsTr("Solve")
-        onClicked: grid.solveSudoku()
-        Layout.fillWidth: true
+        Button {
+            x: 260
+            y: 503
+            text: qsTr("Solve")
+            onClicked: grid.solveSudoku()
+            Layout.fillWidth: true
+        }
+
 
     }
 }
-
