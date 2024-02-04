@@ -27,7 +27,6 @@
         <file>UI/assets/newGame_bg.png</file>
         <file>music/Timeless.mp3</file>
         <file>main.qml</file>
-        <file>UI/assets/mara_photo.png</file>
         <file>UI/assets/bg.png</file>
     </qresource>
     <qresource prefix="/sounds"/>

@@ -1,5 +1,6 @@
 #pragma once
-#include <string>
+#include <QObject>
+
 class SudokuGenerator
 {
 private:
@@ -8,7 +9,7 @@ private:
     int niv_dif;
     int nr_zero;
 public:
-    SudokuGenerator(int n);
+    explicit SudokuGenerator(int n);
     SudokuGenerator(int m[9][9]);
     ~SudokuGenerator();
     int** get_matrice();
@@ -25,7 +26,7 @@ public:
     void scrie_initial();
     void scrie_curent();
     void scrie_solutie();
-
+    int** getSolutionMatrix();
 };
 
 

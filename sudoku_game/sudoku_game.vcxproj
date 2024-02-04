@@ -41,11 +41,11 @@
   <Import Project="$(QtMsBuild)\qt_defaults.props" Condition="Exists('$(QtMsBuild)\qt_defaults.props')" />
   <PropertyGroup Label="QtSettings" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <QtInstall>6.5.3_msvc2019_64</QtInstall>
-    <QtModules>core;opengl;network;gui;multimedia;qml;quick</QtModules>
+    <QtModules>core;opengl;network;gui;multimedia;widgets;qml;quick</QtModules>
   </PropertyGroup>
   <PropertyGroup Label="QtSettings" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <QtInstall>6.5.3_msvc2019_64</QtInstall>
-    <QtModules>core;opengl;network;gui;multimedia;qml;quick</QtModules>
+    <QtModules>core;opengl;network;gui;multimedia;widgets;qml;quick</QtModules>
   </PropertyGroup>
   <Target Name="QtMsBuildNotFound" BeforeTargets="CustomBuild;ClCompile" Condition="!Exists('$(QtMsBuild)\qt.targets') OR !Exists('$(QtMsBuild)\Qt.props')">
     <Message Importance="High" Text="QtMsBuild: could not locate qt.targets, qt.props; project may not build correctly." />
@@ -83,10 +83,9 @@
       <LanguageStandard>stdcpp17</LanguageStandard>
       <ObjectFileName>release\</ObjectFileName>
       <Optimization>MaxSpeed</Optimization>
-      <PreprocessorDefinitions>_WINDOWS;UNICODE;_UNICODE;WIN32;_ENABLE_EXTENDED_ALIGNED_STORAGE;WIN64;NDEBUG;QT_NO_DEBUG;QT_QMLMODELS_LIB;QT_QMLINTEGRATION_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_WINDOWS;UNICODE;_UNICODE;WIN32;_ENABLE_EXTENDED_ALIGNED_STORAGE;WIN64;NDEBUG;QT_QML_DEBUG;QT_NO_DEBUG;QT_QMLMODELS_LIB;QT_QMLINTEGRATION_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PreprocessToFile>false</PreprocessToFile>
-      <ProgramDataBaseFileName>
-      </ProgramDataBaseFileName>
+      <ProgramDataBaseFileName></ProgramDataBaseFileName>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
@@ -115,7 +114,7 @@
       <WarningLevel>0</WarningLevel>
     </Midl>
     <ResourceCompile>
-      <PreprocessorDefinitions>_WINDOWS;UNICODE;_UNICODE;WIN32;_ENABLE_EXTENDED_ALIGNED_STORAGE;WIN64;NDEBUG;QT_NO_DEBUG;QT_QMLMODELS_LIB;QT_QMLINTEGRATION_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_WINDOWS;UNICODE;_UNICODE;WIN32;_ENABLE_EXTENDED_ALIGNED_STORAGE;WIN64;NDEBUG;QT_QML_DEBUG;QT_NO_DEBUG;QT_QMLMODELS_LIB;QT_QMLINTEGRATION_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ResourceCompile>
     <QtMoc>
       <CompilerFlavor>msvc</CompilerFlavor>
@@ -146,7 +145,7 @@
       <LanguageStandard>stdcpp17</LanguageStandard>
       <ObjectFileName>debug\</ObjectFileName>
       <Optimization>Disabled</Optimization>
-      <PreprocessorDefinitions>_WINDOWS;UNICODE;_UNICODE;WIN32;_ENABLE_EXTENDED_ALIGNED_STORAGE;WIN64;QT_QMLMODELS_LIB;QT_QMLINTEGRATION_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_WINDOWS;UNICODE;_UNICODE;WIN32;_ENABLE_EXTENDED_ALIGNED_STORAGE;WIN64;QT_QML_DEBUG;QT_QMLMODELS_LIB;QT_QMLINTEGRATION_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PreprocessToFile>false</PreprocessToFile>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <SuppressStartupBanner>true</SuppressStartupBanner>
@@ -173,7 +172,7 @@
       <WarningLevel>0</WarningLevel>
     </Midl>
     <ResourceCompile>
-      <PreprocessorDefinitions>_WINDOWS;UNICODE;_UNICODE;WIN32;_ENABLE_EXTENDED_ALIGNED_STORAGE;WIN64;QT_QMLMODELS_LIB;QT_QMLINTEGRATION_LIB;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_WINDOWS;UNICODE;_UNICODE;WIN32;_ENABLE_EXTENDED_ALIGNED_STORAGE;WIN64;QT_QML_DEBUG;QT_QMLMODELS_LIB;QT_QMLINTEGRATION_LIB;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ResourceCompile>
     <QtMoc>
       <CompilerFlavor>msvc</CompilerFlavor>
@@ -197,12 +196,15 @@
     <ClCompile Include="Grid.cpp" />
     <ClCompile Include="InitClass.cpp" />
     <ClCompile Include="Music.cpp" />
+    <ClCompile Include="SudokuGenerator.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="Game.h" />
+    <QtMoc Include="Grid.h" />
     <QtMoc Include="InitClass.h" />
     <QtMoc Include="Music.h" />
+    <ClInclude Include="SudokuGenerator.h" />
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="debug\moc_predefs.h.cbt">
@@ -235,21 +237,23 @@
     <None Include="UI\screens\Game.qml" />
     <None Include="UI\screens\HomeScreen.qml" />
     <None Include="UI\screens\HowToPlayWindow.qml" />
+    <None Include="UI\screens\NewGame.qml" />
     <None Include="UI\fonts\Nunito-Bold.ttf" />
     <None Include="UI\fonts\Nunito-Light.ttf" />
     <None Include="UI\fonts\Nunito-Medium.ttf" />
     <None Include="UI\fonts\Nunito-Regular.ttf" />
-    <None Include="UI\screens\Register.qml" />
+    <None Include="music\Timeless.mp3" />
     <None Include="UI\assets\arrow.png" />
+    <None Include="UI\assets\bg.png" />
     <None Include="UI\assets\component.png" />
     <None Include="UI\assets\dwight_photo.png" />
     <None Include="UI\assets\icon.png" />
     <None Include="main.qml" />
     <None Include="UI\assets\mainMenuScreen.png" />
+    <None Include="UI\assets\mara_photo.png" />
+    <None Include="UI\assets\newGame_bg.png" />
     <QtRcc Include="qml.qrc" />
     <None Include="UI\screens\qtquickcontrols2.conf" />
-    <None Include="UI\assets\register_bg.png" />
-    <None Include="UI\assets\scores_leaderboard.png" />
     <None Include="UI\assets\vj_photo.png" />
   </ItemGroup>
   <ItemGroup>
@@ -262,9 +266,9 @@
     <None Include="Pro-Light-300.otf" />
     <None Include="Pro-Regular-400.otf" />
     <None Include="Pro-Solid-900.otf" />
-  </ItemGroup>
-  <ItemGroup>
-    <QtMoc Include="Grid.h" />
+    <None Include="SolutieSudoku.txt" />
+    <None Include="SudokuCurent.txt" />
+    <None Include="SudokuInitial.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <Import Project="$(QtMsBuild)\qt.targets" Condition="Exists('$(QtMsBuild)\qt.targets')" />

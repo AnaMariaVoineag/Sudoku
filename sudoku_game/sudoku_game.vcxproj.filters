@@ -50,21 +50,27 @@
     <ClCompile Include="Game.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Grid.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="InitClass.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Music.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="main.cpp">
+    <ClCompile Include="SudokuGenerator.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Grid.cpp">
+    <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="Game.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="Grid.h">
       <Filter>Header Files</Filter>
     </QtMoc>
     <QtMoc Include="InitClass.h">
@@ -73,9 +79,9 @@
     <QtMoc Include="Music.h">
       <Filter>Header Files</Filter>
     </QtMoc>
-    <QtMoc Include="Grid.h">
+    <ClInclude Include="SudokuGenerator.h">
       <Filter>Header Files</Filter>
-    </QtMoc>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="debug\moc_predefs.h.cbt">
@@ -122,6 +128,9 @@
     <None Include="UI\screens\HowToPlayWindow.qml">
       <Filter>Resource Files</Filter>
     </None>
+    <None Include="UI\screens\NewGame.qml">
+      <Filter>Resource Files</Filter>
+    </None>
     <None Include="UI\fonts\Nunito-Bold.ttf">
       <Filter>Resource Files</Filter>
     </None>
@@ -134,10 +143,13 @@
     <None Include="UI\fonts\Nunito-Regular.ttf">
       <Filter>Resource Files</Filter>
     </None>
-    <None Include="UI\screens\Register.qml">
+    <None Include="music\Timeless.mp3">
       <Filter>Resource Files</Filter>
     </None>
     <None Include="UI\assets\arrow.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="UI\assets\bg.png">
       <Filter>Resource Files</Filter>
     </None>
     <None Include="UI\assets\component.png">
@@ -155,16 +167,16 @@
     <None Include="UI\assets\mainMenuScreen.png">
       <Filter>Resource Files</Filter>
     </None>
+    <None Include="UI\assets\mara_photo.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="UI\assets\newGame_bg.png">
+      <Filter>Resource Files</Filter>
+    </None>
     <QtRcc Include="qml.qrc">
       <Filter>Resource Files</Filter>
     </QtRcc>
     <None Include="UI\screens\qtquickcontrols2.conf">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="UI\assets\register_bg.png">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="UI\assets\scores_leaderboard.png">
       <Filter>Resource Files</Filter>
     </None>
     <None Include="UI\assets\vj_photo.png">
@@ -197,6 +209,15 @@
       <Filter>Distribution Files</Filter>
     </None>
     <None Include="Pro-Solid-900.otf">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="SolutieSudoku.txt">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="SudokuCurent.txt">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="SudokuInitial.txt">
       <Filter>Distribution Files</Filter>
     </None>
   </ItemGroup>

@@ -3,13 +3,12 @@
 #include <QAbstractTableModel>
 #include <QVariant>
 
-
 class Grid : public QAbstractTableModel
 {
     Q_OBJECT
-
 public:
     Grid(QObject *parent = nullptr);
+    ~Grid();
 
     int rowCount(const QModelIndex &parent = QModelIndex()) const override;
 
@@ -21,14 +20,13 @@ public:
 
     Qt::ItemFlags flags(const QModelIndex &index) const override;
 
+    Q_INVOKABLE bool verif(int row, int col, int num) const;
+
 public slots:
     void solveSudoku();
 
-
 private:
     int** gridData;
-    int **initialValues;
-    int matrs[9][9];
 
 
 };

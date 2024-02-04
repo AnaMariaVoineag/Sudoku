@@ -12,6 +12,15 @@ Window {
     title: qsTr("Game")
     color: "#1D2238"
 
+    MessageDialog {
+        id: msgDial
+        text: "Invalid number."
+        informativeText: "Do you want to save your changes?"
+        buttons: MessageDialog.Ok
+
+        onAccepted: msgDial.close()
+    }
+
     Item {
         anchors.fill: parent
 
@@ -20,25 +29,12 @@ Window {
             anchors.fill: parent
 
             Button {
-                id: solve
                 x: 406
                 y: 656
-
+                text: qsTr("Solve")
+                scale: 1.4
                 onClicked: grid.solveSudoku()
                 Layout.fillWidth: true
-
-                background: Rectangle {
-                    color: "transparent"
-                }
-
-                contentItem: Text {
-                    color: solve.hovered ? "#606372" : "#ffffff"
-                    text: qsTr("Solve")
-                    font.family: "Inria Serif"
-                    font.pixelSize: 30
-                    scale: 1.4
-                }
-
             }
         }
 
@@ -73,7 +69,6 @@ Window {
                     id: grid
                 }
 
-
                 delegate: Rectangle {
                     required property var model
                     implicitWidth: 50
@@ -82,32 +77,16 @@ Window {
                     TextField {
                         id: textField
                         anchors.fill: parent
-
                         validator: IntValidator { bottom: 1; top: 9 }
                         text: model.display !== undefined ? model.display.toString() : ""
 
                         readOnly: model.display !== undefined && model.display !== 0
 
-                        onEditingFinished: {
-                            var num = parseInt(textField.text);
-
-                            if (!isNaN(num)) {
-                                if (grid.verif(row, column, num)) {
-                                    console.log("Valid number!");
-                                    textField.color = "green";
-                                } else {
-                                    console.log("Invalid number!");
-                                    textField.color = "red";
-                                }
-                            }
-                        }
-
-
                         horizontalAlignment: TextInput.AlignHCenter
                         verticalAlignment: TextInput.AlignVCenter
 
                         background: Rectangle {
-                            color: model.row % 2 ? "lightpink" : "#bfa6ac" && textField.acceptableInput ? "#FFEFD5" : "#bfa6ac"
+                            color: model.row % 2 ? "lightpink" : "lightblue" && textField.acceptableInput ? "#FFEFD5" : "lightblue"
                             border {
                                 width: 1
                                 color: "white"
@@ -115,9 +94,7 @@ Window {
 
                         }
 
-
                         color: "black"
-
                     }
 
                     Rectangle {
@@ -134,7 +111,6 @@ Window {
                 }
 
             }
-
 
         }
 

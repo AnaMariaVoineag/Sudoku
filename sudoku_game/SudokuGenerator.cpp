@@ -1,6 +1,7 @@
 #include "SudokuGenerator.h"
 #include <iostream>
 #include <fstream>
+
 SudokuGenerator::SudokuGenerator(int n) {
     niv_dif = n;
     for (int i = 0; i < 9; i++)
@@ -61,6 +62,7 @@ bool SudokuGenerator::verif_lin(int i, int nr) {
             return false;
     return true;
 }
+
 bool SudokuGenerator::verif_col(int j, int nr) {
     for (int i = 0; i < 9; i++)
         if (matr[i][j] == nr)
@@ -68,6 +70,7 @@ bool SudokuGenerator::verif_col(int j, int nr) {
     return true;
 
 }
+
 bool SudokuGenerator::verif_complet(int i, int j, int nr) {
     if (verif_col(j, nr) == true && verif_lin(i, nr) == true && verif_patrat(i - (i % 3), j - (j % 3), nr) == true)
         return true;
@@ -141,9 +144,10 @@ void SudokuGenerator::goleste_cel() {
     int l;
     while (nr < nr_zero)
     {
-        l = rand() % 81 - 1;
+        l = rand() % 81;
         int i = l / 9;
         int j = l % 9;
+
         if (matr[i][j] != 0) {
             nr++;
             matr[i][j] = 0;
@@ -183,3 +187,16 @@ void SudokuGenerator::scrie_curent() {
         scrieF << "\n";
     }
 }
+
+int** SudokuGenerator::getSolutionMatrix()
+{
+    int** m = new int*[9];
+    for (int i = 0; i < 9; i++) {
+        m[i] = new int[9];
+        for (int j = 0; j < 9; j++){
+            m[i][j] = matrsol[i][j];
+        }
+    }
+    return m;
+}
+

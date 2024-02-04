@@ -1,15 +1,24 @@
 #include "Grid.h"
 #include "SudokuGenerator.h"
+#include <QDebug>
 
 Grid::Grid(QObject *parent) : QAbstractTableModel(parent) {
     SudokuGenerator sudokuGenerator(1);
     sudokuGenerator.umplu();
 
-    int **initialValues = sudokuGenerator.get_matrice();
-    gridData = initialValues;
+    gridData = sudokuGenerator.get_matrice();
 
     sudokuGenerator.scrie_initial();
 
+}
+
+Grid::~Grid() {
+
+    for (int i = 0; i < 9; i++)
+    {
+        delete[] gridData[i];
+    }
+    delete[] gridData;
 }
 
 int Grid::rowCount(const QModelIndex &) const {
@@ -19,6 +28,7 @@ int Grid::rowCount(const QModelIndex &) const {
 int Grid::columnCount(const QModelIndex &) const {
     return 9;
 }
+
 
 QVariant Grid::data(const QModelIndex &index, int role) const
 {
@@ -49,14 +59,7 @@ bool Grid::setData(const QModelIndex &index, const QVariant &value, int role)
         if (inputValue < 1 || inputValue > 9)
             return false;
 
-
-        for (int i = 0; i < 9; ++i) {
-            if (gridData[index.row()][i] == inputValue || gridData[i][index.column()] == inputValue)
-                return false;
-        }
-
-        if (inputValue == 0 && gridData[index.row()][index.column()] != 0)
-            return false;
+        verif(index.row(), index.column(), inputValue);
 
         gridData[index.row()][index.column()] = inputValue;
 
@@ -67,7 +70,6 @@ bool Grid::setData(const QModelIndex &index, const QVariant &value, int role)
 
     return false;
 }
-
 
 Qt::ItemFlags Grid::flags(const QModelIndex &index) const
 {
@@ -80,29 +82,40 @@ Qt::ItemFlags Grid::flags(const QModelIndex &index) const
     return Qt::ItemIsSelectable | Qt::ItemIsEnabled;
 }
 
-void Grid::solveSudoku()
+bool Grid::verif(int row, int col, int num) const
 {
+    if (gridData[row][col] != 0) {
+        return false;
+    }
+
     SudokuGenerator sudokuGenerator(1);
     sudokuGenerator.umplu();
 
-    QVector<QVector<int>> solution(9, QVector<int>(9));
+    if (sudokuGenerator.verif_complet(row, col, num)) {
+        return true;
+    }
 
+    return false;
+}
 
-    for (int i = 0; i < 9; ++i) {
-        for (int j = 0; j < 9; ++j) {
-            if (gridData[i][j] != 0) {
-                solution[i][j] = gridData[i][j];
-            } else {
-                solution[i][j] = sudokuGenerator.get_matrice()[i][j];
+void Grid::solveSudoku() {
+    SudokuGenerator sudokuGenerator(1);
+    sudokuGenerator.umplu();
+    gridData = sudokuGenerator.getSolutionMatrix();
+
+    for (int i = 0; i < 9; i++) {
+        for (int j = 0; j < 9; j++) {
+            if (gridData[i][j] == 0) {
+                for (int num = 1; num <= 9; num++) {
+                    if (sudokuGenerator.verif_complet(i, j, num)) {
+                        gridData[i][j] = num;
+                        break;
+                    }
+                }
             }
-
-            QModelIndex index = createIndex(i, j);
-            gridData[i][j] = solution[i][j];
-            emit dataChanged(index, index);
         }
     }
 
     sudokuGenerator.scrie_solutie();
-
-
+    emit dataChanged(createIndex(0, 0), createIndex(8, 8));
 }

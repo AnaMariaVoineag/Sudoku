@@ -1,12 +1,11 @@
 import QtQuick 2.15
 import QtQuick.Controls.Basic 6.0
 
-
 Item {
 
     Image {
         id: mainScreen
-        source: "qrc:/UI/assets/mainMenuScreen.png"
+        source: "/UI/assets/mainMenuScreen.png"
         anchors.fill: parent
 
         Image {
@@ -192,7 +191,6 @@ Item {
         font.family: "Inria Serif"
         font.pixelSize: 30
 
-
         contentItem: Text {
             text: btn1.text
             color: btn1.hovered ? "#ea74de" : "#ffffff"
@@ -235,11 +233,13 @@ Item {
         }
     }
 
+    signal loadSignal();
+
 
     Button {
         id: btnMusic
         x: 81
-        y: 290
+        y: 284
         width: 117
         height: 33
         property bool isPlaying: false
@@ -267,8 +267,8 @@ Item {
 
     Text {
         id: ourMotto
-        x: 473
-        y: 655
+        x: 527
+        y: 675
         width: 308
         height: 61
         color: "#ffffff"
@@ -277,11 +277,10 @@ Item {
         horizontalAlignment: Text.AlignHCenter
         verticalAlignment: Text.AlignTop
         wrapMode: Text.Wrap
-        scale: 1.4
+        scale: 1.7
         font.weight: Font.Normal
         font.family: "Inria Serif"
     }
-
 
 
 }
