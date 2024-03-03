@@ -83,16 +83,19 @@ void SudokuGenerator::umple_patr(int x, int y) {
         for (int j = 0; j < 3; j++)
         {
             do {
-                nr = pos[rand() % 9];
+                nr = pos[rand() % 9]; //se alege un nr in continuu pana configuratia este buna
             } while (verif_patrat(x, y, nr) == false);
             matr[x + i][y + j] = nr;
 
         }
 }
+
 void SudokuGenerator::umplu_patrdiag() {
     for (int i = 0; i < 9; i = i + 3)
         umple_patr(i, i);
 }
+
+//trece din casuta in casuta si umple nu pe grid-uri
 bool SudokuGenerator::umplu_restul(int i, int j) {
     if (j >= 9 && i < 8)
     {
@@ -155,6 +158,7 @@ void SudokuGenerator::goleste_cel() {
 
     }
 }
+
 void SudokuGenerator::scrie_solutie() {
     std::ofstream scrieF;
     scrieF.open("SolutieSudoku.txt");
@@ -199,4 +203,3 @@ int** SudokuGenerator::getSolutionMatrix()
     }
     return m;
 }
-

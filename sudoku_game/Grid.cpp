@@ -9,7 +9,6 @@ Grid::Grid(QObject *parent) : QAbstractTableModel(parent) {
     gridData = sudokuGenerator.get_matrice();
 
     sudokuGenerator.scrie_initial();
-
 }
 
 Grid::~Grid() {
@@ -52,7 +51,7 @@ bool Grid::setData(const QModelIndex &index, const QVariant &value, int role)
 {
     if (role == Qt::EditRole) {
         if (!checkIndex(index))
-            return false;
+            return true;
 
         int inputValue = value.toInt();
 
@@ -85,7 +84,7 @@ Qt::ItemFlags Grid::flags(const QModelIndex &index) const
 bool Grid::verif(int row, int col, int num) const
 {
     if (gridData[row][col] != 0) {
-        return false;
+        return true;
     }
 
     SudokuGenerator sudokuGenerator(1);

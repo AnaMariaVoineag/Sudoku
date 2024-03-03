@@ -2,8 +2,8 @@ import QtQuick 2.15
 import QtQuick.Controls 2.15
 import QtQuick.Layouts 1.15
 import QtQuick.Controls.Basic 6.0
-import Qt.labs.platform
 import SudokuGrid 1.0
+import Timer 1.0
 
 Window {
     visible: true
@@ -37,6 +37,25 @@ Window {
                     font.family: "Inria Serif"
                     font.pixelSize: 30
                     scale: 1.4
+                }
+
+            }
+
+            Timer {
+                id: timer
+            }
+
+            Text {
+                id: timeText
+                font.pixelSize: 24
+                color: "white"
+                font.family: "Inria Serif"
+                text: "Total Time<br>" + timer.timeDisplay
+
+                anchors {
+                    top: parent.top
+                    left: parent.left
+                    margins: 15
                 }
 
             }

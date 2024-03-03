@@ -27,6 +27,4 @@ public slots:
 
 private:
     int** gridData;
-
-
 };

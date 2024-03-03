@@ -15,6 +15,7 @@ SOURCES += \
     InitClass.cpp \
     Music.cpp \
     SudokuGenerator.cpp \
+    Timer.cpp \
     main.cpp
 
 RESOURCES += qml.qrc
@@ -35,7 +36,8 @@ HEADERS += \
     Grid.h \
     InitClass.h \
     Music.h \
-    SudokuGenerator.h
+    SudokuGenerator.h \
+    Timer.h
 
 DISTFILES += \
     SolutieSudoku.txt \
