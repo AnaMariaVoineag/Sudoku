@@ -57,4 +57,5 @@ void Timer::timeTick()
     newText.append(QString::number(seconds));
 
     setTimeDisplay(newText);
+
 }

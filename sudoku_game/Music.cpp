@@ -6,12 +6,14 @@ Music::Music(QObject *parent) : QObject{parent}
     mediaPlayer = new QMediaPlayer(this);
     audioOutput = new QAudioOutput(this);
     mediaPlayer->setSource(QUrl("qrc:/music/Timeless.mp3"));
+
 }
 
 Music::~Music()
 {
-    mediaPlayer->deleteLater();
+    delete mediaPlayer;
 }
+
 
 void Music::playMusic()
 {
@@ -33,3 +35,4 @@ void Music::stopMusic()
         std::cout << "No music to stop." << std::endl;
     }
 }
+

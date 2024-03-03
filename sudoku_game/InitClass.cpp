@@ -61,3 +61,5 @@ void InitClass::gameWindow(int dificulty)
         std::cout << "Error loading window: " << component.errorString().toStdString() << std::endl;
     }
 }
+
+

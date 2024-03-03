@@ -42,7 +42,7 @@ Game::Game(int argc, char *argv[]) : QGuiApplication(argc, argv),
 
 Game::~Game()
 {
-    engine->deleteLater();
+    delete engine;
 
 }
 

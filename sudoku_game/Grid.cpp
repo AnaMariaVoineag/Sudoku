@@ -9,6 +9,7 @@ Grid::Grid(QObject *parent) : QAbstractTableModel(parent) {
     gridData = sudokuGenerator.get_matrice();
 
     sudokuGenerator.scrie_initial();
+
 }
 
 Grid::~Grid() {
