@@ -1,0 +1,122 @@
+import QtQuick 2.15
+import QtQuick.Controls 2.15
+import QtQuick.Layouts 1.15
+import QtQuick.Controls.Basic 6.0
+import Qt.labs.platform
+import SudokuGrid 1.0
+
+Window {
+    visible: true
+    width: 1920
+    height: 1080
+    title: qsTr("Game")
+    color: "#1D2238"
+
+    MessageDialog {
+        id: msgDial
+        text: "Invalid number."
+        informativeText: "Do you want to save your changes?"
+        buttons: MessageDialog.Ok
+
+        onAccepted: msgDial.close()
+    }
+
+    Item {
+        anchors.fill: parent
+
+        Rectangle {
+            anchors.centerIn: parent
+            width: 1920
+            height: 1080
+            color: "#1D2238"
+
+            Text {
+                anchors.fill: parent
+                font.pixelSize: 32
+                text: "Sudoku"
+                color: "white"
+                fontSizeMode: Text.Fit
+                minimumPixelSize: 10
+                wrapMode: Text.WordWrap
+                anchors.rightMargin: 0
+                anchors.leftMargin: 0
+                anchors.topMargin: -236
+                anchors.bottomMargin: 299
+
+                horizontalAlignment: Text.AlignHCenter
+                verticalAlignment: Text.AlignVCenter
+            }
+
+            TableView {
+                anchors.centerIn: parent
+                clip: true
+
+                model: SudokuGrid {
+                    id: grid
+                }
+
+                delegate: Rectangle {
+                    required property var model
+                    implicitWidth: 50
+                    implicitHeight: 50
+
+                    TextField {
+                        id: textField
+                        anchors.fill: parent
+                        validator: IntValidator { bottom: 1; top: 9 }
+                        text: model.display !== undefined ? model.display.toString() : ""
+
+                        readOnly: model.display !== undefined && model.display !== 0
+
+                        horizontalAlignment: TextInput.AlignHCenter
+                        verticalAlignment: TextInput.AlignVCenter
+
+                        background: Rectangle {
+                            color: model.row % 2 ? "lightpink" : "lightblue" && textField.acceptableInput ? "#FFEFD5" : "lightblue"
+                            border {
+                                width: 1
+                                color: "white"
+                            }
+
+                        }
+
+                        color: "black"
+                    }
+
+                    Rectangle {
+                        width: 1
+                        height: parent.height
+                        color: model.column % 3 == 0 ? "black" : "transparent"
+                    }
+
+                    Rectangle {
+                        width: parent.width
+                        height: 1
+                        color: model.row % 3 == 0 ? "black" : "transparent"
+                    }
+                }
+
+                Image {
+                    id: mara_photo
+                    x: 1154
+                    y: 173
+                    width: 533
+                    height: 611
+                    source: "qrc:/UI/assets/mara_photo.png"
+                    fillMode: Image.PreserveAspectFit
+                }
+
+            }
+        }
+
+
+
+        Button {
+            x: 260
+            y: 503
+            text: qsTr("Solve")
+            onClicked: grid.solveSudoku()
+            Layout.fillWidth: true
+        }
+    }
+}
