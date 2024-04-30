@@ -12,4 +12,5 @@ Game Window: Using this window users can play the game by typing a number from 1
 
 # Technologies
 Backend: C++, Qt with QML
+
 Frontend: Qml with design made in Figma
