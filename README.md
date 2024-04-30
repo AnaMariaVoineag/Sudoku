@@ -14,3 +14,9 @@ Game Window: Using this window users can play the game by typing a number from 1
 Backend: C++, Qt with QML
 
 Frontend: Qml with design made in Figma
+
+# Photos
+![main menu](https://github.com/AnaVoineag/Sudoku/assets/120953583/6a8b2303-03a4-4dee-9db1-bcfc72f29b60)
+![new game window](https://github.com/AnaVoineag/Sudoku/assets/120953583/f82586a6-4185-49aa-94c0-6bd8831fcfa4)
+![game window](https://github.com/AnaVoineag/Sudoku/assets/120953583/cc45a18b-5d27-49b4-8659-76d1c6a613b4)
+![instructions](https://github.com/AnaVoineag/Sudoku/assets/120953583/e1ad9392-2097-464e-b9e0-1b6df29748f8)
