@@ -5,7 +5,7 @@ In this game and on its windows you will meet some charcters that will explain y
 Only if you want to see the Sudoku board solved correctly you can use Justin Russo’s wizard powers.
 
 # Features
-Colorful Buttons: The buttons are changing its default color when the user is hovering on it
+Colorful Buttons: Each button are changing its default color when the user is hovering on it
 
 How to Play Window: Using this window users learn how to play Sudoku 
 
